@@ -46,6 +46,15 @@ Partial Class Form1
         Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.TextBox4 = New System.Windows.Forms.TextBox()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.ลำดับ = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.วันที่ = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.รายการ = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.จำนวน = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ราคา = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.บ้านเลขที่ = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.แก้ไข = New System.Windows.Forms.DataGridViewButtonColumn()
+        Me.จ่าย = New System.Windows.Forms.DataGridViewCheckBoxColumn()
+        Me.ลบ = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.address1 = New System.Windows.Forms.ComboBox()
         Me.address2 = New System.Windows.Forms.TextBox()
@@ -61,239 +70,256 @@ Partial Class Form1
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.remaingPaid = New System.Windows.Forms.TextBox()
-        Me.ลำดับ = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.วันที่ = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.รายการ = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.จำนวน = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ราคา = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.บ้านเลขที่ = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.แก้ไข = New System.Windows.Forms.DataGridViewButtonColumn()
-        Me.จ่าย = New System.Windows.Forms.DataGridViewCheckBoxColumn()
-        Me.ลบ = New System.Windows.Forms.DataGridViewButtonColumn()
+        Me.orderDate = New System.Windows.Forms.TextBox()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Label6 = New System.Windows.Forms.Label()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'กระเพรา
         '
+        Me.กระเพรา.BackColor = System.Drawing.Color.PaleVioletRed
         Me.กระเพรา.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.กระเพรา.Location = New System.Drawing.Point(12, 98)
+        Me.กระเพรา.Location = New System.Drawing.Point(25, 98)
         Me.กระเพรา.Name = "กระเพรา"
         Me.กระเพรา.Size = New System.Drawing.Size(184, 46)
         Me.กระเพรา.TabIndex = 0
         Me.กระเพรา.Text = "กระเพรา"
-        Me.กระเพรา.UseVisualStyleBackColor = True
+        Me.กระเพรา.UseVisualStyleBackColor = False
         '
         'คะน้า
         '
+        Me.คะน้า.BackColor = System.Drawing.Color.PaleVioletRed
         Me.คะน้า.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.คะน้า.Location = New System.Drawing.Point(12, 150)
+        Me.คะน้า.Location = New System.Drawing.Point(25, 150)
         Me.คะน้า.Name = "คะน้า"
         Me.คะน้า.Size = New System.Drawing.Size(184, 46)
         Me.คะน้า.TabIndex = 1
         Me.คะน้า.Text = "คะน้า"
-        Me.คะน้า.UseVisualStyleBackColor = True
+        Me.คะน้า.UseVisualStyleBackColor = False
         '
         'ผัดพริกแกง
         '
+        Me.ผัดพริกแกง.BackColor = System.Drawing.Color.PaleVioletRed
         Me.ผัดพริกแกง.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.ผัดพริกแกง.Location = New System.Drawing.Point(12, 202)
+        Me.ผัดพริกแกง.Location = New System.Drawing.Point(25, 202)
         Me.ผัดพริกแกง.Name = "ผัดพริกแกง"
         Me.ผัดพริกแกง.Size = New System.Drawing.Size(184, 46)
         Me.ผัดพริกแกง.TabIndex = 2
         Me.ผัดพริกแกง.Text = "ผัดพริกแกง"
-        Me.ผัดพริกแกง.UseVisualStyleBackColor = True
+        Me.ผัดพริกแกง.UseVisualStyleBackColor = False
         '
         'ข้าวกระเทียม
         '
+        Me.ข้าวกระเทียม.BackColor = System.Drawing.Color.PaleVioletRed
         Me.ข้าวกระเทียม.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.ข้าวกระเทียม.Location = New System.Drawing.Point(12, 254)
+        Me.ข้าวกระเทียม.Location = New System.Drawing.Point(25, 254)
         Me.ข้าวกระเทียม.Name = "ข้าวกระเทียม"
         Me.ข้าวกระเทียม.Size = New System.Drawing.Size(184, 46)
         Me.ข้าวกระเทียม.TabIndex = 3
         Me.ข้าวกระเทียม.Text = "ข้าวกระเทียม"
-        Me.ข้าวกระเทียม.UseVisualStyleBackColor = True
+        Me.ข้าวกระเทียม.UseVisualStyleBackColor = False
         '
         'ข้าวผัด
         '
+        Me.ข้าวผัด.BackColor = System.Drawing.Color.PaleVioletRed
         Me.ข้าวผัด.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.ข้าวผัด.Location = New System.Drawing.Point(12, 306)
+        Me.ข้าวผัด.Location = New System.Drawing.Point(25, 306)
         Me.ข้าวผัด.Name = "ข้าวผัด"
         Me.ข้าวผัด.Size = New System.Drawing.Size(184, 46)
         Me.ข้าวผัด.TabIndex = 4
         Me.ข้าวผัด.Text = "ข้าวผัด"
-        Me.ข้าวผัด.UseVisualStyleBackColor = True
+        Me.ข้าวผัด.UseVisualStyleBackColor = False
         '
         'ข้าวไข่ข้น
         '
+        Me.ข้าวไข่ข้น.BackColor = System.Drawing.Color.PaleVioletRed
         Me.ข้าวไข่ข้น.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.ข้าวไข่ข้น.Location = New System.Drawing.Point(12, 358)
+        Me.ข้าวไข่ข้น.Location = New System.Drawing.Point(25, 358)
         Me.ข้าวไข่ข้น.Name = "ข้าวไข่ข้น"
         Me.ข้าวไข่ข้น.Size = New System.Drawing.Size(184, 46)
         Me.ข้าวไข่ข้น.TabIndex = 5
         Me.ข้าวไข่ข้น.Text = "ข้าวไข่ข้น"
-        Me.ข้าวไข่ข้น.UseVisualStyleBackColor = True
+        Me.ข้าวไข่ข้น.UseVisualStyleBackColor = False
         '
         'ข้าวไข่เจียว
         '
+        Me.ข้าวไข่เจียว.BackColor = System.Drawing.Color.PaleVioletRed
         Me.ข้าวไข่เจียว.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.ข้าวไข่เจียว.Location = New System.Drawing.Point(12, 410)
+        Me.ข้าวไข่เจียว.Location = New System.Drawing.Point(25, 410)
         Me.ข้าวไข่เจียว.Name = "ข้าวไข่เจียว"
         Me.ข้าวไข่เจียว.Size = New System.Drawing.Size(184, 46)
         Me.ข้าวไข่เจียว.TabIndex = 6
         Me.ข้าวไข่เจียว.Text = "ข้าวไข่เจียว"
-        Me.ข้าวไข่เจียว.UseVisualStyleBackColor = True
+        Me.ข้าวไข่เจียว.UseVisualStyleBackColor = False
         '
         'หมูสับ
         '
+        Me.หมูสับ.BackColor = System.Drawing.Color.Pink
         Me.หมูสับ.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.หมูสับ.Location = New System.Drawing.Point(213, 98)
+        Me.หมูสับ.Location = New System.Drawing.Point(226, 98)
         Me.หมูสับ.Name = "หมูสับ"
         Me.หมูสับ.Size = New System.Drawing.Size(184, 46)
         Me.หมูสับ.TabIndex = 7
         Me.หมูสับ.Text = "หมูสับ"
-        Me.หมูสับ.UseVisualStyleBackColor = True
+        Me.หมูสับ.UseVisualStyleBackColor = False
         '
         'หมูชิ้น
         '
+        Me.หมูชิ้น.BackColor = System.Drawing.Color.Pink
         Me.หมูชิ้น.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.หมูชิ้น.Location = New System.Drawing.Point(213, 150)
+        Me.หมูชิ้น.Location = New System.Drawing.Point(226, 150)
         Me.หมูชิ้น.Name = "หมูชิ้น"
         Me.หมูชิ้น.Size = New System.Drawing.Size(184, 46)
         Me.หมูชิ้น.TabIndex = 8
         Me.หมูชิ้น.Text = "หมูชิ้น"
-        Me.หมูชิ้น.UseVisualStyleBackColor = True
+        Me.หมูชิ้น.UseVisualStyleBackColor = False
         '
         'ไก่
         '
+        Me.ไก่.BackColor = System.Drawing.Color.Pink
         Me.ไก่.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.ไก่.Location = New System.Drawing.Point(213, 202)
+        Me.ไก่.Location = New System.Drawing.Point(226, 202)
         Me.ไก่.Name = "ไก่"
         Me.ไก่.Size = New System.Drawing.Size(184, 46)
         Me.ไก่.TabIndex = 9
         Me.ไก่.Text = "ไก่"
-        Me.ไก่.UseVisualStyleBackColor = True
+        Me.ไก่.UseVisualStyleBackColor = False
         '
         'เนื้อสับ
         '
+        Me.เนื้อสับ.BackColor = System.Drawing.Color.Pink
         Me.เนื้อสับ.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.เนื้อสับ.Location = New System.Drawing.Point(213, 254)
+        Me.เนื้อสับ.Location = New System.Drawing.Point(226, 254)
         Me.เนื้อสับ.Name = "เนื้อสับ"
         Me.เนื้อสับ.Size = New System.Drawing.Size(184, 46)
         Me.เนื้อสับ.TabIndex = 10
         Me.เนื้อสับ.Text = "เนื้อสับ"
-        Me.เนื้อสับ.UseVisualStyleBackColor = True
+        Me.เนื้อสับ.UseVisualStyleBackColor = False
         '
         'กุ้ง
         '
+        Me.กุ้ง.BackColor = System.Drawing.Color.Pink
         Me.กุ้ง.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.กุ้ง.Location = New System.Drawing.Point(213, 306)
+        Me.กุ้ง.Location = New System.Drawing.Point(226, 306)
         Me.กุ้ง.Name = "กุ้ง"
         Me.กุ้ง.Size = New System.Drawing.Size(184, 46)
         Me.กุ้ง.TabIndex = 11
         Me.กุ้ง.Text = "กุ้ง"
-        Me.กุ้ง.UseVisualStyleBackColor = True
+        Me.กุ้ง.UseVisualStyleBackColor = False
         '
         'หมึก
         '
+        Me.หมึก.BackColor = System.Drawing.Color.Pink
         Me.หมึก.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.หมึก.Location = New System.Drawing.Point(403, 98)
+        Me.หมึก.Location = New System.Drawing.Point(416, 98)
         Me.หมึก.Name = "หมึก"
         Me.หมึก.Size = New System.Drawing.Size(184, 46)
         Me.หมึก.TabIndex = 12
         Me.หมึก.Text = "หมึก"
-        Me.หมึก.UseVisualStyleBackColor = True
+        Me.หมึก.UseVisualStyleBackColor = False
         '
         'ไข่เยี่ยวม้า
         '
+        Me.ไข่เยี่ยวม้า.BackColor = System.Drawing.Color.Pink
         Me.ไข่เยี่ยวม้า.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.ไข่เยี่ยวม้า.Location = New System.Drawing.Point(403, 150)
+        Me.ไข่เยี่ยวม้า.Location = New System.Drawing.Point(416, 150)
         Me.ไข่เยี่ยวม้า.Name = "ไข่เยี่ยวม้า"
         Me.ไข่เยี่ยวม้า.Size = New System.Drawing.Size(184, 46)
         Me.ไข่เยี่ยวม้า.TabIndex = 13
         Me.ไข่เยี่ยวม้า.Text = "ไข่เยี่ยวม้า"
-        Me.ไข่เยี่ยวม้า.UseVisualStyleBackColor = True
+        Me.ไข่เยี่ยวม้า.UseVisualStyleBackColor = False
         '
         'หมูกรอบ
         '
+        Me.หมูกรอบ.BackColor = System.Drawing.Color.Pink
         Me.หมูกรอบ.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.หมูกรอบ.Location = New System.Drawing.Point(403, 202)
+        Me.หมูกรอบ.Location = New System.Drawing.Point(416, 202)
         Me.หมูกรอบ.Name = "หมูกรอบ"
         Me.หมูกรอบ.Size = New System.Drawing.Size(184, 46)
         Me.หมูกรอบ.TabIndex = 14
         Me.หมูกรอบ.Text = "หมูกรอบ"
-        Me.หมูกรอบ.UseVisualStyleBackColor = True
+        Me.หมูกรอบ.UseVisualStyleBackColor = False
         '
         'ทะเล
         '
+        Me.ทะเล.BackColor = System.Drawing.Color.Pink
         Me.ทะเล.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.ทะเล.Location = New System.Drawing.Point(403, 254)
+        Me.ทะเล.Location = New System.Drawing.Point(416, 254)
         Me.ทะเล.Name = "ทะเล"
         Me.ทะเล.Size = New System.Drawing.Size(184, 46)
         Me.ทะเล.TabIndex = 15
         Me.ทะเล.Text = "ทะเล"
-        Me.ทะเล.UseVisualStyleBackColor = True
+        Me.ทะเล.UseVisualStyleBackColor = False
         '
         'ไข่ดาว
         '
+        Me.ไข่ดาว.BackColor = System.Drawing.Color.Yellow
         Me.ไข่ดาว.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.ไข่ดาว.Location = New System.Drawing.Point(603, 98)
+        Me.ไข่ดาว.Location = New System.Drawing.Point(610, 98)
         Me.ไข่ดาว.Name = "ไข่ดาว"
         Me.ไข่ดาว.Size = New System.Drawing.Size(184, 46)
         Me.ไข่ดาว.TabIndex = 20
         Me.ไข่ดาว.Text = "ไข่ดาว"
-        Me.ไข่ดาว.UseVisualStyleBackColor = True
+        Me.ไข่ดาว.UseVisualStyleBackColor = False
         '
         'ไข่เจียว
         '
+        Me.ไข่เจียว.BackColor = System.Drawing.Color.Yellow
         Me.ไข่เจียว.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.ไข่เจียว.Location = New System.Drawing.Point(603, 150)
+        Me.ไข่เจียว.Location = New System.Drawing.Point(610, 150)
         Me.ไข่เจียว.Name = "ไข่เจียว"
         Me.ไข่เจียว.Size = New System.Drawing.Size(184, 46)
         Me.ไข่เจียว.TabIndex = 21
         Me.ไข่เจียว.Text = "ไข่เจียว"
-        Me.ไข่เจียว.UseVisualStyleBackColor = True
+        Me.ไข่เจียว.UseVisualStyleBackColor = False
         '
         'กุนเชียง
         '
+        Me.กุนเชียง.BackColor = System.Drawing.Color.Pink
         Me.กุนเชียง.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.กุนเชียง.Location = New System.Drawing.Point(403, 306)
+        Me.กุนเชียง.Location = New System.Drawing.Point(416, 306)
         Me.กุนเชียง.Name = "กุนเชียง"
         Me.กุนเชียง.Size = New System.Drawing.Size(184, 46)
         Me.กุนเชียง.TabIndex = 22
         Me.กุนเชียง.Text = "กุนเชียง"
-        Me.กุนเชียง.UseVisualStyleBackColor = True
+        Me.กุนเชียง.UseVisualStyleBackColor = False
         '
         'Add
         '
+        Me.Add.BackColor = System.Drawing.Color.DodgerBlue
         Me.Add.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.Add.Location = New System.Drawing.Point(1002, 302)
+        Me.Add.Location = New System.Drawing.Point(1198, 12)
         Me.Add.Name = "Add"
-        Me.Add.Size = New System.Drawing.Size(184, 154)
+        Me.Add.Size = New System.Drawing.Size(248, 218)
         Me.Add.TabIndex = 23
         Me.Add.Text = "เพิ่ม"
-        Me.Add.UseVisualStyleBackColor = True
+        Me.Add.UseVisualStyleBackColor = False
         '
         'TextBox1
         '
         Me.TextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.TextBox1.Location = New System.Drawing.Point(12, 12)
+        Me.TextBox1.Location = New System.Drawing.Point(25, 12)
         Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.ReadOnly = True
         Me.TextBox1.Size = New System.Drawing.Size(184, 62)
         Me.TextBox1.TabIndex = 24
         '
         'TextBox2
         '
         Me.TextBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.TextBox2.Location = New System.Drawing.Point(213, 12)
+        Me.TextBox2.Location = New System.Drawing.Point(226, 12)
         Me.TextBox2.Name = "TextBox2"
+        Me.TextBox2.ReadOnly = True
         Me.TextBox2.Size = New System.Drawing.Size(374, 62)
         Me.TextBox2.TabIndex = 25
         '
         'TextBox4
         '
         Me.TextBox4.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.TextBox4.Location = New System.Drawing.Point(603, 12)
+        Me.TextBox4.Location = New System.Drawing.Point(610, 12)
         Me.TextBox4.Name = "TextBox4"
+        Me.TextBox4.ReadOnly = True
         Me.TextBox4.Size = New System.Drawing.Size(184, 62)
         Me.TextBox4.TabIndex = 27
         '
@@ -301,159 +327,13 @@ Partial Class Form1
         '
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ลำดับ, Me.วันที่, Me.รายการ, Me.จำนวน, Me.ราคา, Me.บ้านเลขที่, Me.แก้ไข, Me.จ่าย, Me.ลบ})
-        Me.DataGridView1.Location = New System.Drawing.Point(12, 535)
+        Me.DataGridView1.Location = New System.Drawing.Point(25, 468)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.RowHeadersVisible = False
         Me.DataGridView1.RowHeadersWidth = 62
         Me.DataGridView1.RowTemplate.Height = 28
-        Me.DataGridView1.Size = New System.Drawing.Size(1233, 337)
+        Me.DataGridView1.Size = New System.Drawing.Size(1452, 630)
         Me.DataGridView1.TabIndex = 29
-        '
-        'ComboBox1
-        '
-        Me.ComboBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Items.AddRange(New Object() {"1", "2", "3", "4", "5", "6", "7", "8", "9"})
-        Me.ComboBox1.Location = New System.Drawing.Point(770, 274)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(85, 54)
-        Me.ComboBox1.TabIndex = 30
-        '
-        'address1
-        '
-        Me.address1.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.address1.FormattingEnabled = True
-        Me.address1.Items.AddRange(New Object() {"11", "18", "55", "-"})
-        Me.address1.Location = New System.Drawing.Point(769, 402)
-        Me.address1.Name = "address1"
-        Me.address1.Size = New System.Drawing.Size(86, 54)
-        Me.address1.TabIndex = 31
-        '
-        'address2
-        '
-        Me.address2.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.address2.Location = New System.Drawing.Point(878, 403)
-        Me.address2.Name = "address2"
-        Me.address2.Size = New System.Drawing.Size(116, 53)
-        Me.address2.TabIndex = 32
-        '
-        'price
-        '
-        Me.price.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.price.Location = New System.Drawing.Point(769, 334)
-        Me.price.Name = "price"
-        Me.price.Size = New System.Drawing.Size(169, 62)
-        Me.price.TabIndex = 33
-        '
-        'CheckBox1
-        '
-        Me.CheckBox1.AutoSize = True
-        Me.CheckBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.CheckBox1.Location = New System.Drawing.Point(810, 98)
-        Me.CheckBox1.Name = "CheckBox1"
-        Me.CheckBox1.Size = New System.Drawing.Size(168, 50)
-        Me.CheckBox1.TabIndex = 34
-        Me.CheckBox1.Text = "ราดข้าว"
-        Me.CheckBox1.UseVisualStyleBackColor = True
-        '
-        'CheckBox2
-        '
-        Me.CheckBox2.AutoSize = True
-        Me.CheckBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.CheckBox2.Location = New System.Drawing.Point(810, 150)
-        Me.CheckBox2.Name = "CheckBox2"
-        Me.CheckBox2.Size = New System.Drawing.Size(154, 50)
-        Me.CheckBox2.TabIndex = 35
-        Me.CheckBox2.Text = "กับข้าว"
-        Me.CheckBox2.UseVisualStyleBackColor = True
-        '
-        'CheckBox3
-        '
-        Me.CheckBox3.AutoSize = True
-        Me.CheckBox3.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.CheckBox3.Location = New System.Drawing.Point(1010, 98)
-        Me.CheckBox3.Name = "CheckBox3"
-        Me.CheckBox3.Size = New System.Drawing.Size(134, 50)
-        Me.CheckBox3.TabIndex = 36
-        Me.CheckBox3.Text = "พิเศษ"
-        Me.CheckBox3.UseVisualStyleBackColor = True
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.Label1.Location = New System.Drawing.Point(603, 282)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(125, 46)
-        Me.Label1.TabIndex = 37
-        Me.Label1.Text = "จำนวน"
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.Label2.Location = New System.Drawing.Point(603, 410)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(160, 46)
-        Me.Label2.TabIndex = 38
-        Me.Label2.Text = "บ้านเลขที่"
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.Label3.Location = New System.Drawing.Point(603, 344)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(95, 46)
-        Me.Label3.TabIndex = 39
-        Me.Label3.Text = "ราคา"
-        '
-        'orderDetailView
-        '
-        Me.orderDetailView.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.orderDetailView.Location = New System.Drawing.Point(12, 475)
-        Me.orderDetailView.Name = "orderDetailView"
-        Me.orderDetailView.ReadOnly = True
-        Me.orderDetailView.Size = New System.Drawing.Size(594, 44)
-        Me.orderDetailView.TabIndex = 40
-        '
-        'priceSum
-        '
-        Me.priceSum.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.priceSum.Location = New System.Drawing.Point(1048, 475)
-        Me.priceSum.Name = "priceSum"
-        Me.priceSum.ReadOnly = True
-        Me.priceSum.Size = New System.Drawing.Size(138, 44)
-        Me.priceSum.TabIndex = 41
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.Label4.Location = New System.Drawing.Point(898, 475)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(144, 46)
-        Me.Label4.TabIndex = 42
-        Me.Label4.Text = "ยอดรวม"
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.Label5.Location = New System.Drawing.Point(612, 475)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(132, 46)
-        Me.Label5.TabIndex = 43
-        Me.Label5.Text = "ค่างจ่าย"
-        '
-        'remaingPaid
-        '
-        Me.remaingPaid.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.remaingPaid.Location = New System.Drawing.Point(754, 475)
-        Me.remaingPaid.Name = "remaingPaid"
-        Me.remaingPaid.ReadOnly = True
-        Me.remaingPaid.Size = New System.Drawing.Size(138, 44)
-        Me.remaingPaid.TabIndex = 44
         '
         'ลำดับ
         '
@@ -521,11 +401,189 @@ Partial Class Form1
         Me.ลบ.Name = "ลบ"
         Me.ลบ.Width = 50
         '
+        'ComboBox1
+        '
+        Me.ComboBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Items.AddRange(New Object() {"1", "2", "3", "4", "5", "6", "7", "8", "9"})
+        Me.ComboBox1.Location = New System.Drawing.Point(967, 138)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(168, 54)
+        Me.ComboBox1.TabIndex = 30
+        '
+        'address1
+        '
+        Me.address1.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
+        Me.address1.FormattingEnabled = True
+        Me.address1.Items.AddRange(New Object() {"11", "18", "55", "-"})
+        Me.address1.Location = New System.Drawing.Point(966, 266)
+        Me.address1.Name = "address1"
+        Me.address1.Size = New System.Drawing.Size(86, 54)
+        Me.address1.TabIndex = 31
+        '
+        'address2
+        '
+        Me.address2.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
+        Me.address2.Location = New System.Drawing.Point(1075, 267)
+        Me.address2.Name = "address2"
+        Me.address2.Size = New System.Drawing.Size(116, 53)
+        Me.address2.TabIndex = 32
+        '
+        'price
+        '
+        Me.price.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
+        Me.price.Location = New System.Drawing.Point(966, 198)
+        Me.price.Name = "price"
+        Me.price.Size = New System.Drawing.Size(169, 62)
+        Me.price.TabIndex = 33
+        '
+        'CheckBox1
+        '
+        Me.CheckBox1.AutoSize = True
+        Me.CheckBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
+        Me.CheckBox1.Location = New System.Drawing.Point(808, 12)
+        Me.CheckBox1.Name = "CheckBox1"
+        Me.CheckBox1.Size = New System.Drawing.Size(168, 50)
+        Me.CheckBox1.TabIndex = 34
+        Me.CheckBox1.Text = "ราดข้าว"
+        Me.CheckBox1.UseVisualStyleBackColor = True
+        '
+        'CheckBox2
+        '
+        Me.CheckBox2.AutoSize = True
+        Me.CheckBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
+        Me.CheckBox2.Location = New System.Drawing.Point(808, 64)
+        Me.CheckBox2.Name = "CheckBox2"
+        Me.CheckBox2.Size = New System.Drawing.Size(154, 50)
+        Me.CheckBox2.TabIndex = 35
+        Me.CheckBox2.Text = "กับข้าว"
+        Me.CheckBox2.UseVisualStyleBackColor = True
+        '
+        'CheckBox3
+        '
+        Me.CheckBox3.AutoSize = True
+        Me.CheckBox3.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
+        Me.CheckBox3.Location = New System.Drawing.Point(1008, 12)
+        Me.CheckBox3.Name = "CheckBox3"
+        Me.CheckBox3.Size = New System.Drawing.Size(134, 50)
+        Me.CheckBox3.TabIndex = 36
+        Me.CheckBox3.Text = "พิเศษ"
+        Me.CheckBox3.UseVisualStyleBackColor = True
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
+        Me.Label1.Location = New System.Drawing.Point(800, 146)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(125, 46)
+        Me.Label1.TabIndex = 37
+        Me.Label1.Text = "จำนวน"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
+        Me.Label2.Location = New System.Drawing.Point(800, 274)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(160, 46)
+        Me.Label2.TabIndex = 38
+        Me.Label2.Text = "บ้านเลขที่"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
+        Me.Label3.Location = New System.Drawing.Point(800, 208)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(95, 46)
+        Me.Label3.TabIndex = 39
+        Me.Label3.Text = "ราคา"
+        '
+        'orderDetailView
+        '
+        Me.orderDetailView.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
+        Me.orderDetailView.Location = New System.Drawing.Point(226, 411)
+        Me.orderDetailView.Name = "orderDetailView"
+        Me.orderDetailView.ReadOnly = True
+        Me.orderDetailView.Size = New System.Drawing.Size(569, 44)
+        Me.orderDetailView.TabIndex = 40
+        '
+        'priceSum
+        '
+        Me.priceSum.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
+        Me.priceSum.Location = New System.Drawing.Point(1245, 339)
+        Me.priceSum.Name = "priceSum"
+        Me.priceSum.ReadOnly = True
+        Me.priceSum.Size = New System.Drawing.Size(187, 44)
+        Me.priceSum.TabIndex = 41
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
+        Me.Label4.Location = New System.Drawing.Point(1095, 339)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(144, 46)
+        Me.Label4.TabIndex = 42
+        Me.Label4.Text = "ยอดรวม"
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
+        Me.Label5.Location = New System.Drawing.Point(800, 339)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(132, 46)
+        Me.Label5.TabIndex = 43
+        Me.Label5.Text = "ค้างจ่าย"
+        '
+        'remaingPaid
+        '
+        Me.remaingPaid.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
+        Me.remaingPaid.Location = New System.Drawing.Point(951, 339)
+        Me.remaingPaid.Name = "remaingPaid"
+        Me.remaingPaid.ReadOnly = True
+        Me.remaingPaid.Size = New System.Drawing.Size(138, 44)
+        Me.remaingPaid.TabIndex = 44
+        '
+        'orderDate
+        '
+        Me.orderDate.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
+        Me.orderDate.Location = New System.Drawing.Point(951, 409)
+        Me.orderDate.Name = "orderDate"
+        Me.orderDate.Size = New System.Drawing.Size(251, 53)
+        Me.orderDate.TabIndex = 45
+        '
+        'Button1
+        '
+        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
+        Me.Button1.Location = New System.Drawing.Point(1208, 409)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(101, 53)
+        Me.Button1.TabIndex = 46
+        Me.Button1.Text = "ค้นหา"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
+        Me.Label6.Location = New System.Drawing.Point(801, 412)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(87, 46)
+        Me.Label6.TabIndex = 47
+        Me.Label6.Text = "วันที่"
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1247, 884)
+        Me.AutoSize = True
+        Me.ClientSize = New System.Drawing.Size(1476, 1121)
+        Me.Controls.Add(Me.Label6)
+        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.orderDate)
         Me.Controls.Add(Me.remaingPaid)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Label4)
@@ -566,6 +624,7 @@ Partial Class Form1
         Me.Controls.Add(Me.คะน้า)
         Me.Controls.Add(Me.กระเพรา)
         Me.Name = "Form1"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "283Cafe"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
@@ -621,4 +680,7 @@ Partial Class Form1
     Friend WithEvents แก้ไข As Windows.Forms.DataGridViewButtonColumn
     Friend WithEvents จ่าย As Windows.Forms.DataGridViewCheckBoxColumn
     Friend WithEvents ลบ As Windows.Forms.DataGridViewButtonColumn
+    Friend WithEvents orderDate As Windows.Forms.TextBox
+    Friend WithEvents Button1 As Windows.Forms.Button
+    Friend WithEvents Label6 As Windows.Forms.Label
 End Class

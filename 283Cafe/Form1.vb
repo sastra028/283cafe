@@ -380,6 +380,7 @@ Public Class Form1
     Private Sub Form1_Shown(sender As Object, e As EventArgs) Handles Me.Shown
         _currentDate = getCurrentTime("dd-MM-yyyy")
         Dim orderMain As OrderMain = getOrderCurrent(".", _currentDate)
+        orderDate.Text = _currentDate
         If orderMain IsNot Nothing Then
             If orderMain.orderModel IsNot Nothing Then
                 orderModelList = orderMain.orderModel
@@ -472,4 +473,16 @@ Public Class Form1
         Next
     End Sub
 
+    Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
+        _currentDate = orderDate.Text
+        Dim orderMain As OrderMain = getOrderCurrent(".", _currentDate)
+        orderDate.Text = _currentDate
+        If orderMain IsNot Nothing Then
+            If orderMain.orderModel IsNot Nothing Then
+                orderModelList = orderMain.orderModel
+            End If
+        End If
+        clear()
+        drawTableRow()
+    End Sub
 End Class
