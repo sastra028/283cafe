@@ -6,11 +6,12 @@ Imports Newtonsoft.Json
 Imports System.Net
 Imports System.Net.NetworkInformation
 Imports System.Text
+Imports Newtonsoft.Json.Linq
+Imports System.Runtime.CompilerServices
 
 Public Class Form1
 
-    Dim orderModelList As New List(Of OrderModel)
-    'Dim orderModel As OrderModel
+    Dim orderModelList As List(Of OrderModel) = New List(Of OrderModel)
     Dim _orderName As String = ""
     Dim _totalPrice As Integer = 0
     Dim _menuPrice As Integer = 0
@@ -346,8 +347,10 @@ Public Class Form1
     End Sub
 
     Private Sub Form1_Closing(sender As Object, e As CancelEventArgs) Handles Me.Closing
-
-        Dim jsonOrderModelList = objectToString(orderModelList)
+        Dim orderMain = New OrderMain
+        orderMain.orderModel = orderModelList
+        Dim jsonOrderModelList = objectToString(orderMain)
+        createBill(jsonOrderModelList, ".")
     End Sub
     Function objectToString(objInput As Object)
         Return JsonConvert.SerializeObject(objInput, Formatting.Indented)
@@ -364,11 +367,7 @@ Public Class Form1
                 Directory.CreateDirectory(backupPath)
             End If
             Dim moveFile = fullPathBackup + "datasource_" + _currentDate + "_" + getCurrentTime("ddMMyyyy-HHmmsss") + ".txt"
-            Try
-                'My.Computer.FileSystem.DeleteFile(moveFile)
-            Catch ex As Exception
 
-            End Try
             Try
                 File.Move(fullPath, moveFile)
             Catch ex As Exception
@@ -378,6 +377,74 @@ Public Class Form1
         Using sw As New StreamWriter(File.Open(fullPath, FileMode.OpenOrCreate))
             sw.WriteLine(data)
         End Using
-        'MessageBox.Show("ส่งบิลไปที่ " + fullPath)
+    End Sub
+
+    Private Sub Form1_Shown(sender As Object, e As EventArgs) Handles Me.Shown
+        _currentDate = getCurrentTime("dd-mm-yyyy")
+        Dim orderMain As OrderMain = getOrderCurrent(".", _currentDate)
+        If orderMain IsNot Nothing Then
+            If orderMain.orderModel IsNot Nothing Then
+                orderModelList = orderMain.orderModel
+            End If
+        End If
+        clear()
+        drawTableRow()
+    End Sub
+
+    Function getOrderCurrent(rootPath As String, currentDate As String)
+        Dim orderModel = New OrderMain
+        Try
+            Dim fileName = "datasource_" + _currentDate + ".txt"
+            Dim fullPath = rootPath + "\" + fileName
+            orderModel = JsonConvert.DeserializeObject(Of OrderMain)(getFile(fullPath))
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+
+        End Try
+        Return orderModel
+    End Function
+    Function getFile(fileName As String)
+        Try
+            Dim line As String = ""
+            Dim FilePath As String = fileName
+            Using reader As StreamReader = New StreamReader(FilePath)
+                line += reader.ReadToEnd
+            End Using
+            Return line
+        Catch ex As Exception
+            Return ""
+        End Try
+    End Function
+
+    Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
+        Try
+            Dim columnName = DataGridView1.Columns(e.ColumnIndex).Name
+            If "ลบ".Equals(columnName) Then
+                Dim dr As DataGridViewRow = DataGridView1.Rows(e.RowIndex)
+                Dim _number = dr.Cells(0).Value.ToString()
+
+                Dim orderModelRemove = New OrderModel
+                For Each item As OrderModel In orderModelList
+                    If _number.Equals(item.seq) Then
+                        orderModelRemove = item
+                    End If
+                Next
+                If orderModelRemove IsNot Nothing Then
+                    orderModelList.Remove(orderModelRemove)
+                End If
+            End If
+        Catch ex As Exception
+
+        End Try
+        reSeq()
+        drawTableRow()
+    End Sub
+
+    Private Sub reSeq()
+        Dim count As Integer = 1
+        For Each item As OrderModel In orderModelList
+            item.seq = count
+            count += 1
+        Next
     End Sub
 End Class

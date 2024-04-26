@@ -459,7 +459,7 @@ Partial Class Form1
         Me.orderDetailView.Location = New System.Drawing.Point(12, 462)
         Me.orderDetailView.Name = "orderDetailView"
         Me.orderDetailView.ReadOnly = True
-        Me.orderDetailView.Size = New System.Drawing.Size(441, 44)
+        Me.orderDetailView.Size = New System.Drawing.Size(751, 44)
         Me.orderDetailView.TabIndex = 40
         '
         'priceSum
