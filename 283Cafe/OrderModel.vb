@@ -9,6 +9,16 @@
         End Set
     End Property
 
+    Private _datetime As String
+    Public Property datetime() As String
+        Get
+            Return _datetime
+        End Get
+        Set(ByVal value As String)
+            _datetime = value
+        End Set
+    End Property
+
     Private _orderDesc As String
     Public Property orderDesc() As String
         Get
@@ -19,22 +29,22 @@
         End Set
     End Property
 
-    Private _price As String
-    Public Property price() As String
+    Private _price As Integer
+    Public Property price() As Integer
         Get
             Return _price
         End Get
-        Set(ByVal value As String)
+        Set(ByVal value As Integer)
             _price = value
         End Set
     End Property
 
-    Private _number As String
-    Public Property number() As String
+    Private _number As Integer
+    Public Property number() As Integer
         Get
             Return _number
         End Get
-        Set(ByVal value As String)
+        Set(ByVal value As Integer)
             _number = value
         End Set
     End Property

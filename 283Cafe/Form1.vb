@@ -1,10 +1,17 @@
 ﻿Imports System.Collections.Generic
+Imports System.Windows.Forms
 
 Public Class Form1
 
-    Dim totalPrice As Integer = 0
     Dim orderModelList As New List(Of OrderModel)
-    Dim orderModel = New OrderModel()
+    'Dim orderModel As OrderModel
+    Dim _orderName As String = ""
+    Dim _totalPrice As Integer = 0
+    Dim _menuPrice As Integer = 0
+    Dim _menuTypePrice As Integer = 0
+    Dim _orderTypePrice As Integer = 0
+    Dim _onTopPrice As Integer = 0
+    Dim _specialPrice As Integer = 0
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles กระเพรา.Click
         TextBox1.Text = "กระเพรา"
         calPrice()
@@ -128,6 +135,7 @@ Public Class Form1
         Dim orderTypePrice As Integer = getOrderTypePrice()
         Dim onTopPrice As Integer = getOnTopPrice()
         Dim specialPrice As Integer = getSpecialPrice()
+        Dim orderName = TextBox1.Text + TextBox2.Text + " + " + TextBox4.Text + " + " + TextBox5.Text + " (" + TextBox3.Text + ") "
         If "กระเพรา".Equals(menu) Then
             menuPrice = 50
         ElseIf "คะน้า".Equals(menu) Then
@@ -143,10 +151,37 @@ Public Class Form1
         ElseIf "ข้าวไข่เจียว".Equals(menu) Then
             menuPrice = 50
         End If
+        Dim totalPrice As Integer = 0
         If TextBox1.TextLength > 0 And TextBox2.TextLength > 0 Then
             totalPrice = menuPrice + menuTypePrice + orderTypePrice + onTopPrice + specialPrice
             price.Text = totalPrice.ToString("####")
-            orderModel.seq = 1
+            _orderName = orderName
+            _totalPrice = totalPrice
+            _menuPrice = menuPrice
+            _menuTypePrice = menuTypePrice
+            _orderTypePrice = orderTypePrice
+            _onTopPrice = onTopPrice
+            _specialPrice = specialPrice
+
+            'Dim orderModel = New OrderModel()
+            'orderModel.seq = 1
+            'orderModel.orderDesc = orderName
+            'orderModel.number = ComboBox1.Text.ToString()
+            'orderModel.price = totalPrice
+            'orderModel.address1 = address1.Text
+            'orderModel.address2 = address2.Text
+            'Dim orderDetailModel = New OrderDetailModel()
+            'orderDetailModel.menu = TextBox1.Text
+            'orderDetailModel.menuPrice = menuPrice
+            'orderDetailModel.menuType = TextBox2.Text
+            'orderDetailModel.menuTypePrice = menuTypePrice
+            'orderDetailModel.orderType = TextBox3.Text
+            'orderDetailModel.orderTypePrice = orderTypePrice
+            'orderDetailModel.onTop = TextBox4.Text
+            'orderDetailModel.onTopPrice = onTopPrice
+            'orderDetailModel.special = TextBox5.Text
+            'orderDetailModel.specialPrice = specialPrice
+            'orderModel.orderDetailModel = orderDetailModel
         Else
             totalPrice = 0
             price.Text = totalPrice.ToString("####")
@@ -213,7 +248,68 @@ Public Class Form1
     End Function
 
     Private Sub Add_Click(sender As Object, e As EventArgs) Handles Add.Click
-        orderModelList.Add(OrderModel)
+        Dim orderModel = New OrderModel()
+        orderModel.seq = 1
+        orderModel.datetime = getCurrentTime("dd/MM/yyyy HHmm")
+        orderModel.orderDesc = _orderName
+        orderModel.number = ComboBox1.Text.ToString()
+        orderModel.price = _totalPrice
+        orderModel.address1 = address1.Text
+        orderModel.address2 = address2.Text
+        Dim orderDetailModel = New OrderDetailModel()
+        orderDetailModel.menu = TextBox1.Text
+        orderDetailModel.menuPrice = _menuPrice
+        orderDetailModel.menuType = TextBox2.Text
+        orderDetailModel.menuTypePrice = _menuTypePrice
+        orderDetailModel.orderType = TextBox3.Text
+        orderDetailModel.orderTypePrice = _orderTypePrice
+        orderDetailModel.onTop = TextBox4.Text
+        orderDetailModel.onTopPrice = _onTopPrice
+        orderDetailModel.special = TextBox5.Text
+        orderDetailModel.specialPrice = _specialPrice
+        orderModel.orderDetailModel = orderDetailModel
+        orderModelList.Add(orderModel)
+        clear()
+        drawTableRow()
+    End Sub
 
+    Function getCurrentTime(format As String)
+        Dim time As DateTime = DateTime.Now
+        If format.Equals("") Then
+            format = "ddMMyyyy-HHmmss"
+        End If
+        Return time.ToString(format, System.Globalization.DateTimeFormatInfo.InvariantInfo)
+    End Function
+    Private Sub drawTableRow()
+        DataGridView1.Rows.Clear()
+
+        For Each item As OrderModel In orderModelList
+            addRow(DataGridView1, item)
+        Next
+
+    End Sub
+    Private Sub addRow(dataGridView As DataGridView, item As OrderModel)
+        dataGridView.Rows.Add(
+            item.seq, item.datetime, item.orderDesc, item.number, item.price, item.address1 + item.address2)
+
+    End Sub
+
+    Private Sub clear()
+        _orderName = ""
+        _totalPrice = 0
+        _menuPrice = 0
+        _menuTypePrice = 0
+        _orderTypePrice = 0
+        _onTopPrice = 0
+        _specialPrice = 0
+        TextBox1.Text = ""
+        TextBox2.Text = ""
+        TextBox3.Text = ""
+        TextBox4.Text = ""
+        TextBox5.Text = ""
+        price.Text = ""
+        ComboBox1.SelectedText = 1
+        address1.Text = ""
+        address2.Text = ""
     End Sub
 End Class

@@ -9,12 +9,12 @@
         End Set
     End Property
 
-    Private _menuPrice As String
-    Public Property menuPrice() As String
+    Private _menuPrice As Integer
+    Public Property menuPrice() As Integer
         Get
             Return _menuPrice
         End Get
-        Set(ByVal value As String)
+        Set(ByVal value As Integer)
             _menuPrice = value
         End Set
     End Property
@@ -28,12 +28,12 @@
             _menuType = value
         End Set
     End Property
-    Private _menuTypePrice As String
-    Public Property menuTypePrice() As String
+    Private _menuTypePrice As Integer
+    Public Property menuTypePrice() As Integer
         Get
             Return _menuTypePrice
         End Get
-        Set(ByVal value As String)
+        Set(ByVal value As Integer)
             _menuTypePrice = value
         End Set
     End Property
@@ -47,12 +47,12 @@
             _orderType = value
         End Set
     End Property
-    Private _orderTypePrice As String
-    Public Property orderTypePrice() As String
+    Private _orderTypePrice As Integer
+    Public Property orderTypePrice() As Integer
         Get
             Return _orderTypePrice
         End Get
-        Set(ByVal value As String)
+        Set(ByVal value As Integer)
             _orderTypePrice = value
         End Set
     End Property
@@ -66,12 +66,12 @@
             _onTop = value
         End Set
     End Property
-    Private _onTopPrice As String
-    Public Property onTopPrice() As String
+    Private _onTopPrice As Integer
+    Public Property onTopPrice() As Integer
         Get
             Return _onTopPrice
         End Get
-        Set(ByVal value As String)
+        Set(ByVal value As Integer)
             _onTopPrice = value
         End Set
     End Property
@@ -85,12 +85,12 @@
             _special = value
         End Set
     End Property
-    Private _specialPrice As String
-    Public Property specialPrice() As String
+    Private _specialPrice As Integer
+    Public Property specialPrice() As Integer
         Get
             Return _specialPrice
         End Get
-        Set(ByVal value As String)
+        Set(ByVal value As Integer)
             _specialPrice = value
         End Set
     End Property
