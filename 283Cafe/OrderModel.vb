@@ -80,4 +80,13 @@
         End Set
     End Property
 
+    Private _paid As Boolean
+    Public Property paid() As Boolean
+        Get
+            Return _paid
+        End Get
+        Set(ByVal value As Boolean)
+            _paid = value
+        End Set
+    End Property
 End Class

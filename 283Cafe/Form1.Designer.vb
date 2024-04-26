@@ -46,13 +46,6 @@ Partial Class Form1
         Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.TextBox4 = New System.Windows.Forms.TextBox()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.ลำดับ = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.วันที่ = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.รายการ = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.จำนวน = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ราคา = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.บ้านเลขที่ = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ลบ = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.address1 = New System.Windows.Forms.ComboBox()
         Me.address2 = New System.Windows.Forms.TextBox()
@@ -66,6 +59,17 @@ Partial Class Form1
         Me.orderDetailView = New System.Windows.Forms.TextBox()
         Me.priceSum = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.remaingPaid = New System.Windows.Forms.TextBox()
+        Me.ลำดับ = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.วันที่ = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.รายการ = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.จำนวน = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ราคา = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.บ้านเลขที่ = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.แก้ไข = New System.Windows.Forms.DataGridViewButtonColumn()
+        Me.จ่าย = New System.Windows.Forms.DataGridViewCheckBoxColumn()
+        Me.ลบ = New System.Windows.Forms.DataGridViewButtonColumn()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -296,63 +300,14 @@ Partial Class Form1
         'DataGridView1
         '
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ลำดับ, Me.วันที่, Me.รายการ, Me.จำนวน, Me.ราคา, Me.บ้านเลขที่, Me.ลบ})
+        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ลำดับ, Me.วันที่, Me.รายการ, Me.จำนวน, Me.ราคา, Me.บ้านเลขที่, Me.แก้ไข, Me.จ่าย, Me.ลบ})
         Me.DataGridView1.Location = New System.Drawing.Point(12, 535)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.RowHeadersVisible = False
         Me.DataGridView1.RowHeadersWidth = 62
         Me.DataGridView1.RowTemplate.Height = 28
-        Me.DataGridView1.Size = New System.Drawing.Size(1181, 337)
+        Me.DataGridView1.Size = New System.Drawing.Size(1233, 337)
         Me.DataGridView1.TabIndex = 29
-        '
-        'ลำดับ
-        '
-        Me.ลำดับ.HeaderText = "ลำดับ"
-        Me.ลำดับ.MinimumWidth = 8
-        Me.ลำดับ.Name = "ลำดับ"
-        Me.ลำดับ.Width = 50
-        '
-        'วันที่
-        '
-        Me.วันที่.HeaderText = "วันที่"
-        Me.วันที่.MinimumWidth = 8
-        Me.วันที่.Name = "วันที่"
-        Me.วันที่.Width = 120
-        '
-        'รายการ
-        '
-        Me.รายการ.HeaderText = "รายการ"
-        Me.รายการ.MinimumWidth = 8
-        Me.รายการ.Name = "รายการ"
-        Me.รายการ.Width = 250
-        '
-        'จำนวน
-        '
-        Me.จำนวน.HeaderText = "จำนวน"
-        Me.จำนวน.MinimumWidth = 8
-        Me.จำนวน.Name = "จำนวน"
-        Me.จำนวน.Width = 50
-        '
-        'ราคา
-        '
-        Me.ราคา.HeaderText = "ราคา"
-        Me.ราคา.MinimumWidth = 8
-        Me.ราคา.Name = "ราคา"
-        Me.ราคา.Width = 50
-        '
-        'บ้านเลขที่
-        '
-        Me.บ้านเลขที่.HeaderText = "บ้านเลขที่"
-        Me.บ้านเลขที่.MinimumWidth = 8
-        Me.บ้านเลขที่.Name = "บ้านเลขที่"
-        Me.บ้านเลขที่.Width = 150
-        '
-        'ลบ
-        '
-        Me.ลบ.HeaderText = "ลบ"
-        Me.ลบ.MinimumWidth = 8
-        Me.ลบ.Name = "ลบ"
-        Me.ลบ.Width = 50
         '
         'ComboBox1
         '
@@ -456,36 +411,123 @@ Partial Class Form1
         'orderDetailView
         '
         Me.orderDetailView.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.orderDetailView.Location = New System.Drawing.Point(12, 462)
+        Me.orderDetailView.Location = New System.Drawing.Point(12, 475)
         Me.orderDetailView.Name = "orderDetailView"
         Me.orderDetailView.ReadOnly = True
-        Me.orderDetailView.Size = New System.Drawing.Size(751, 44)
+        Me.orderDetailView.Size = New System.Drawing.Size(594, 44)
         Me.orderDetailView.TabIndex = 40
         '
         'priceSum
         '
         Me.priceSum.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.priceSum.Location = New System.Drawing.Point(1002, 475)
+        Me.priceSum.Location = New System.Drawing.Point(1048, 475)
         Me.priceSum.Name = "priceSum"
         Me.priceSum.ReadOnly = True
-        Me.priceSum.Size = New System.Drawing.Size(184, 44)
+        Me.priceSum.Size = New System.Drawing.Size(138, 44)
         Me.priceSum.TabIndex = 41
         '
         'Label4
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.Label4.Location = New System.Drawing.Point(834, 475)
+        Me.Label4.Location = New System.Drawing.Point(898, 475)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(144, 46)
         Me.Label4.TabIndex = 42
         Me.Label4.Text = "ยอดรวม"
         '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
+        Me.Label5.Location = New System.Drawing.Point(612, 475)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(132, 46)
+        Me.Label5.TabIndex = 43
+        Me.Label5.Text = "ค่างจ่าย"
+        '
+        'remaingPaid
+        '
+        Me.remaingPaid.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
+        Me.remaingPaid.Location = New System.Drawing.Point(754, 475)
+        Me.remaingPaid.Name = "remaingPaid"
+        Me.remaingPaid.ReadOnly = True
+        Me.remaingPaid.Size = New System.Drawing.Size(138, 44)
+        Me.remaingPaid.TabIndex = 44
+        '
+        'ลำดับ
+        '
+        Me.ลำดับ.HeaderText = "ลำดับ"
+        Me.ลำดับ.MinimumWidth = 8
+        Me.ลำดับ.Name = "ลำดับ"
+        Me.ลำดับ.Width = 70
+        '
+        'วันที่
+        '
+        Me.วันที่.HeaderText = "วันที่"
+        Me.วันที่.MinimumWidth = 8
+        Me.วันที่.Name = "วันที่"
+        Me.วันที่.Width = 120
+        '
+        'รายการ
+        '
+        Me.รายการ.HeaderText = "รายการ"
+        Me.รายการ.MinimumWidth = 8
+        Me.รายการ.Name = "รายการ"
+        Me.รายการ.Width = 250
+        '
+        'จำนวน
+        '
+        Me.จำนวน.HeaderText = "จำนวน"
+        Me.จำนวน.MinimumWidth = 8
+        Me.จำนวน.Name = "จำนวน"
+        Me.จำนวน.Width = 50
+        '
+        'ราคา
+        '
+        Me.ราคา.HeaderText = "ราคา"
+        Me.ราคา.MinimumWidth = 8
+        Me.ราคา.Name = "ราคา"
+        Me.ราคา.Width = 50
+        '
+        'บ้านเลขที่
+        '
+        Me.บ้านเลขที่.HeaderText = "บ้านเลขที่"
+        Me.บ้านเลขที่.MinimumWidth = 8
+        Me.บ้านเลขที่.Name = "บ้านเลขที่"
+        Me.บ้านเลขที่.Width = 150
+        '
+        'แก้ไข
+        '
+        Me.แก้ไข.HeaderText = "แก้ไข"
+        Me.แก้ไข.MinimumWidth = 8
+        Me.แก้ไข.Name = "แก้ไข"
+        Me.แก้ไข.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.แก้ไข.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
+        Me.แก้ไข.Width = 50
+        '
+        'จ่าย
+        '
+        Me.จ่าย.HeaderText = "จ่าย"
+        Me.จ่าย.MinimumWidth = 8
+        Me.จ่าย.Name = "จ่าย"
+        Me.จ่าย.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.จ่าย.Width = 50
+        '
+        'ลบ
+        '
+        Me.ลบ.HeaderText = "ลบ"
+        Me.ลบ.MinimumWidth = 8
+        Me.ลบ.Name = "ลบ"
+        Me.ลบ.Width = 50
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1198, 884)
+        Me.ClientSize = New System.Drawing.Size(1247, 884)
+        Me.Controls.Add(Me.remaingPaid)
+        Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.priceSum)
         Me.Controls.Add(Me.orderDetailView)
@@ -555,13 +597,6 @@ Partial Class Form1
     Friend WithEvents TextBox2 As Windows.Forms.TextBox
     Friend WithEvents TextBox4 As Windows.Forms.TextBox
     Friend WithEvents DataGridView1 As Windows.Forms.DataGridView
-    Friend WithEvents ลำดับ As Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents วันที่ As Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents รายการ As Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents จำนวน As Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents ราคา As Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents บ้านเลขที่ As Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents ลบ As Windows.Forms.DataGridViewButtonColumn
     Friend WithEvents ComboBox1 As Windows.Forms.ComboBox
     Friend WithEvents address1 As Windows.Forms.ComboBox
     Friend WithEvents address2 As Windows.Forms.TextBox
@@ -575,4 +610,15 @@ Partial Class Form1
     Friend WithEvents orderDetailView As Windows.Forms.TextBox
     Friend WithEvents priceSum As Windows.Forms.TextBox
     Friend WithEvents Label4 As Windows.Forms.Label
+    Friend WithEvents Label5 As Windows.Forms.Label
+    Friend WithEvents remaingPaid As Windows.Forms.TextBox
+    Friend WithEvents ลำดับ As Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents วันที่ As Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents รายการ As Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents จำนวน As Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents ราคา As Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents บ้านเลขที่ As Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents แก้ไข As Windows.Forms.DataGridViewButtonColumn
+    Friend WithEvents จ่าย As Windows.Forms.DataGridViewCheckBoxColumn
+    Friend WithEvents ลบ As Windows.Forms.DataGridViewButtonColumn
 End Class

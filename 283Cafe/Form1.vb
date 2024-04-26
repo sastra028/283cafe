@@ -3,11 +3,6 @@ Imports System.ComponentModel
 Imports System.IO
 Imports System.Windows.Forms
 Imports Newtonsoft.Json
-Imports System.Net
-Imports System.Net.NetworkInformation
-Imports System.Text
-Imports Newtonsoft.Json.Linq
-Imports System.Runtime.CompilerServices
 
 Public Class Form1
 
@@ -153,7 +148,7 @@ Public Class Form1
             orderName += " + " + textBox5
         End If
         If textBox3.Length > 0 Then
-            orderName += " (" + textBox3 + " )"
+            orderName += " (" + textBox3 + ")"
         End If
         orderDetailView.Text = orderName
 
@@ -250,6 +245,10 @@ Public Class Form1
     End Function
 
     Private Sub Add_Click(sender As Object, e As EventArgs) Handles Add.Click
+        If price.TextLength = 0 Then
+            MsgBox("กรุณาเหลือรายการให้ครบ")
+            Exit Sub
+        End If
         Dim orderModel = New OrderModel()
         orderModel.seq = orderModelList.Count + 1
         orderModel.datetime = getCurrentTime("dd/MM/yyyy HH:mm")
@@ -286,16 +285,21 @@ Public Class Form1
         DataGridView1.Rows.Clear()
 
         Dim sum As Integer = 0
+        Dim paidRemaing As Integer = 0
 
         For Each item As OrderModel In orderModelList
             addRow(DataGridView1, item)
             sum += item.price
+            If item.paid = False Then
+                paidRemaing += item.price
+            End If
         Next
         priceSum.Text = sum.ToString("#####")
+        remaingPaid.Text = paidRemaing.ToString("#####")
     End Sub
     Private Sub addRow(dataGridView As DataGridView, item As OrderModel)
         dataGridView.Rows.Add(
-            item.seq, item.datetime, item.orderDesc, item.number, item.price, item.address1 + "-" + item.address2)
+            item.seq, item.datetime, item.orderDesc, item.number, item.price, item.address1 + "-" + item.address2, "แก้ไข", item.paid)
 
     End Sub
 
@@ -322,13 +326,7 @@ Public Class Form1
         textBox3 = ""
     End Sub
 
-    Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox1.CheckedChanged
-
-    End Sub
-
-
     Private Sub CheckBox3_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox3.CheckedChanged
-
         calPrice()
     End Sub
 
@@ -380,7 +378,7 @@ Public Class Form1
     End Sub
 
     Private Sub Form1_Shown(sender As Object, e As EventArgs) Handles Me.Shown
-        _currentDate = getCurrentTime("dd-mm-yyyy")
+        _currentDate = getCurrentTime("dd-MM-yyyy")
         Dim orderMain As OrderMain = getOrderCurrent(".", _currentDate)
         If orderMain IsNot Nothing Then
             If orderMain.orderModel IsNot Nothing Then
@@ -420,23 +418,49 @@ Public Class Form1
         Try
             Dim columnName = DataGridView1.Columns(e.ColumnIndex).Name
             If "ลบ".Equals(columnName) Then
+                If MessageBox.Show("ต้องการลบใช่ไหม ?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
+                    Dim dr As DataGridViewRow = DataGridView1.Rows(e.RowIndex)
+                    Dim _number = dr.Cells(0).Value.ToString()
+
+                    Dim orderModelRemove = New OrderModel
+                    For Each item As OrderModel In orderModelList
+                        If _number.Equals(item.seq) Then
+                            orderModelRemove = item
+                        End If
+                    Next
+                    If orderModelRemove IsNot Nothing Then
+                        orderModelList.Remove(orderModelRemove)
+                    End If
+                    reSeq()
+                End If
+            End If
+            If "จ่าย".Equals(columnName) Then
+
                 Dim dr As DataGridViewRow = DataGridView1.Rows(e.RowIndex)
                 Dim _number = dr.Cells(0).Value.ToString()
-
-                Dim orderModelRemove = New OrderModel
                 For Each item As OrderModel In orderModelList
                     If _number.Equals(item.seq) Then
-                        orderModelRemove = item
+                        item.paid = Not item.paid
                     End If
                 Next
-                If orderModelRemove IsNot Nothing Then
-                    orderModelList.Remove(orderModelRemove)
-                End If
+            End If
+            If "แก้ไข".Equals(columnName) Then
+                Dim dr As DataGridViewRow = DataGridView1.Rows(e.RowIndex)
+                Dim _number = dr.Cells(0).Value.ToString()
+                Dim _address = dr.Cells(5).Value.ToString()
+                Dim _address1 = _address.Split("-")(0)
+                Dim _address2 = _address.Split("-")(1)
+                For Each item As OrderModel In orderModelList
+                    If _number.Equals(item.seq) Then
+                        item.address1 = _address1
+                        item.address2 = _address2
+                    End If
+                Next
+                MsgBox("แก้ไขสำเร็จ")
             End If
         Catch ex As Exception
 
         End Try
-        reSeq()
         drawTableRow()
     End Sub
 
@@ -447,4 +471,5 @@ Public Class Form1
             count += 1
         Next
     End Sub
+
 End Class
