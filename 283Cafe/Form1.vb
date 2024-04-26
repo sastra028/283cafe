@@ -1,5 +1,11 @@
 ﻿Imports System.Collections.Generic
+Imports System.ComponentModel
+Imports System.IO
 Imports System.Windows.Forms
+Imports Newtonsoft.Json
+Imports System.Net
+Imports System.Net.NetworkInformation
+Imports System.Text
 
 Public Class Form1
 
@@ -12,6 +18,10 @@ Public Class Form1
     Dim _orderTypePrice As Integer = 0
     Dim _onTopPrice As Integer = 0
     Dim _specialPrice As Integer = 0
+    Dim _currentDate As String = ""
+
+    Dim textBox3 As String = ""
+    Dim textBox5 As String = ""
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles กระเพรา.Click
         TextBox1.Text = "กระเพรา"
         calPrice()
@@ -97,15 +107,6 @@ Public Class Form1
         calPrice()
     End Sub
 
-    Private Sub ราดข้าว_Click(sender As Object, e As EventArgs) Handles ราดข้าว.Click
-        TextBox3.Text = "ราดข้าว"
-        calPrice()
-    End Sub
-
-    Private Sub กับข้าว_Click(sender As Object, e As EventArgs) Handles กับข้าว.Click
-        TextBox3.Text = "กับข้าว"
-        calPrice()
-    End Sub
 
     Private Sub ไข่ดาว_Click(sender As Object, e As EventArgs) Handles ไข่ดาว.Click
         TextBox4.Text = "ไข่ดาว"
@@ -117,14 +118,11 @@ Public Class Form1
         calPrice()
     End Sub
 
-    Private Sub พิเศษ_Click(sender As Object, e As EventArgs) Handles พิเศษ.Click
-        TextBox5.Text = "พิเศษ"
-        calPrice()
-    End Sub
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ComboBox1.SelectedText = 1
         address1.SelectedItem = 1
+        CheckBox1.Checked = True
     End Sub
 
     Private Sub calPrice()
@@ -135,7 +133,29 @@ Public Class Form1
         Dim orderTypePrice As Integer = getOrderTypePrice()
         Dim onTopPrice As Integer = getOnTopPrice()
         Dim specialPrice As Integer = getSpecialPrice()
-        Dim orderName = TextBox1.Text + TextBox2.Text + " + " + TextBox4.Text + " + " + TextBox5.Text + " (" + TextBox3.Text + ") "
+        If (CheckBox3.Checked) Then
+            textBox5 = "พิเศษ"
+        End If
+        If (CheckBox1.Checked) Then
+            textBox3 = "ราดข้าว"
+        End If
+        If (CheckBox2.Checked) Then
+            textBox3 = "กับข้าว"
+        End If
+
+        Dim orderName = TextBox1.Text + TextBox2.Text
+
+        If TextBox4.TextLength > 0 Then
+            orderName += " + " + TextBox4.Text
+        End If
+        If textBox5.Length > 0 Then
+            orderName += " + " + textBox5
+        End If
+        If textBox3.Length > 0 Then
+            orderName += " (" + textBox3 + " )"
+        End If
+        orderDetailView.Text = orderName
+
         If "กระเพรา".Equals(menu) Then
             menuPrice = 50
         ElseIf "คะน้า".Equals(menu) Then
@@ -152,8 +172,12 @@ Public Class Form1
             menuPrice = 50
         End If
         Dim totalPrice As Integer = 0
+        Dim numberOrder = ComboBox1.Text
         If TextBox1.TextLength > 0 And TextBox2.TextLength > 0 Then
             totalPrice = menuPrice + menuTypePrice + orderTypePrice + onTopPrice + specialPrice
+            If numberOrder Then
+                totalPrice = totalPrice * numberOrder
+            End If
             price.Text = totalPrice.ToString("####")
             _orderName = orderName
             _totalPrice = totalPrice
@@ -163,25 +187,6 @@ Public Class Form1
             _onTopPrice = onTopPrice
             _specialPrice = specialPrice
 
-            'Dim orderModel = New OrderModel()
-            'orderModel.seq = 1
-            'orderModel.orderDesc = orderName
-            'orderModel.number = ComboBox1.Text.ToString()
-            'orderModel.price = totalPrice
-            'orderModel.address1 = address1.Text
-            'orderModel.address2 = address2.Text
-            'Dim orderDetailModel = New OrderDetailModel()
-            'orderDetailModel.menu = TextBox1.Text
-            'orderDetailModel.menuPrice = menuPrice
-            'orderDetailModel.menuType = TextBox2.Text
-            'orderDetailModel.menuTypePrice = menuTypePrice
-            'orderDetailModel.orderType = TextBox3.Text
-            'orderDetailModel.orderTypePrice = orderTypePrice
-            'orderDetailModel.onTop = TextBox4.Text
-            'orderDetailModel.onTopPrice = onTopPrice
-            'orderDetailModel.special = TextBox5.Text
-            'orderDetailModel.specialPrice = specialPrice
-            'orderModel.orderDetailModel = orderDetailModel
         Else
             totalPrice = 0
             price.Text = totalPrice.ToString("####")
@@ -217,11 +222,8 @@ Public Class Form1
     End Function
 
     Function getOrderTypePrice()
-        Dim type = TextBox3.Text
         Dim orderTypePrice = 0
-        If "ราดข้าว".Equals(type) Then
-            orderTypePrice = 0
-        ElseIf "กับข้าว".Equals(type) Then
+        If CheckBox2.Checked Then
             orderTypePrice = 20
         End If
         Return orderTypePrice
@@ -239,9 +241,8 @@ Public Class Form1
     End Function
 
     Function getSpecialPrice()
-        Dim type = TextBox5.Text
         Dim onTopPrice = 0
-        If "พิเศษ".Equals(type) Then
+        If CheckBox3.Checked Then
             onTopPrice = 10
         End If
         Return onTopPrice
@@ -249,8 +250,8 @@ Public Class Form1
 
     Private Sub Add_Click(sender As Object, e As EventArgs) Handles Add.Click
         Dim orderModel = New OrderModel()
-        orderModel.seq = 1
-        orderModel.datetime = getCurrentTime("dd/MM/yyyy HHmm")
+        orderModel.seq = orderModelList.Count + 1
+        orderModel.datetime = getCurrentTime("dd/MM/yyyy HH:mm")
         orderModel.orderDesc = _orderName
         orderModel.number = ComboBox1.Text.ToString()
         orderModel.price = _totalPrice
@@ -261,11 +262,11 @@ Public Class Form1
         orderDetailModel.menuPrice = _menuPrice
         orderDetailModel.menuType = TextBox2.Text
         orderDetailModel.menuTypePrice = _menuTypePrice
-        orderDetailModel.orderType = TextBox3.Text
+        orderDetailModel.orderType = textBox3
         orderDetailModel.orderTypePrice = _orderTypePrice
         orderDetailModel.onTop = TextBox4.Text
         orderDetailModel.onTopPrice = _onTopPrice
-        orderDetailModel.special = TextBox5.Text
+        orderDetailModel.special = textBox5
         orderDetailModel.specialPrice = _specialPrice
         orderModel.orderDetailModel = orderDetailModel
         orderModelList.Add(orderModel)
@@ -283,14 +284,17 @@ Public Class Form1
     Private Sub drawTableRow()
         DataGridView1.Rows.Clear()
 
+        Dim sum As Integer = 0
+
         For Each item As OrderModel In orderModelList
             addRow(DataGridView1, item)
+            sum += item.price
         Next
-
+        priceSum.Text = sum.ToString("#####")
     End Sub
     Private Sub addRow(dataGridView As DataGridView, item As OrderModel)
         dataGridView.Rows.Add(
-            item.seq, item.datetime, item.orderDesc, item.number, item.price, item.address1 + item.address2)
+            item.seq, item.datetime, item.orderDesc, item.number, item.price, item.address1 + "-" + item.address2)
 
     End Sub
 
@@ -304,12 +308,76 @@ Public Class Form1
         _specialPrice = 0
         TextBox1.Text = ""
         TextBox2.Text = ""
-        TextBox3.Text = ""
         TextBox4.Text = ""
-        TextBox5.Text = ""
         price.Text = ""
-        ComboBox1.SelectedText = 1
+        ComboBox1.Text = "1"
         address1.Text = ""
         address2.Text = ""
+        CheckBox1.Checked = True
+        CheckBox2.Checked = False
+        CheckBox3.Checked = False
+
+        textBox5 = ""
+        textBox3 = ""
+    End Sub
+
+    Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox1.CheckedChanged
+
+    End Sub
+
+
+    Private Sub CheckBox3_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox3.CheckedChanged
+
+        calPrice()
+    End Sub
+
+    Private Sub CheckBox2_Click(sender As Object, e As EventArgs) Handles CheckBox2.Click
+        CheckBox1.Checked = False
+        calPrice()
+    End Sub
+
+    Private Sub CheckBox1_Click(sender As Object, e As EventArgs) Handles CheckBox1.Click
+        CheckBox2.Checked = False
+        calPrice()
+    End Sub
+
+    Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox1.SelectedIndexChanged
+        calPrice()
+    End Sub
+
+    Private Sub Form1_Closing(sender As Object, e As CancelEventArgs) Handles Me.Closing
+
+        Dim jsonOrderModelList = objectToString(orderModelList)
+    End Sub
+    Function objectToString(objInput As Object)
+        Return JsonConvert.SerializeObject(objInput, Formatting.Indented)
+    End Function
+    Sub createBill(data As String, path As String)
+        Dim fileName = "datasource_" + _currentDate + ".txt"
+        Dim fullPath As String = path + "\" + fileName
+        Dim fullPathBackup As String = path + "\backup\"
+        Dim fileExists As Boolean = File.Exists(fullPath)
+        If fileExists Then
+            Dim backupPath As String
+            backupPath = path + "\backup"
+            If Not Directory.Exists(backupPath) Then
+                Directory.CreateDirectory(backupPath)
+            End If
+            Dim moveFile = fullPathBackup + "datasource_" + _currentDate + "_" + getCurrentTime("ddMMyyyy-HHmmsss") + ".txt"
+            Try
+                'My.Computer.FileSystem.DeleteFile(moveFile)
+            Catch ex As Exception
+
+            End Try
+            Try
+                File.Move(fullPath, moveFile)
+            Catch ex As Exception
+                MsgBox("Error")
+            End Try
+        End If
+        Using sw As New StreamWriter(File.Open(fullPath, FileMode.OpenOrCreate))
+            sw.WriteLine(data)
+        End Using
+        'MessageBox.Show("ส่งบิลไปที่ " + fullPath)
     End Sub
 End Class

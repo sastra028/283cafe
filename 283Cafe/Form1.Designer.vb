@@ -38,18 +38,13 @@ Partial Class Form1
         Me.ไข่เยี่ยวม้า = New System.Windows.Forms.Button()
         Me.หมูกรอบ = New System.Windows.Forms.Button()
         Me.ทะเล = New System.Windows.Forms.Button()
-        Me.ราดข้าว = New System.Windows.Forms.Button()
-        Me.กับข้าว = New System.Windows.Forms.Button()
-        Me.พิเศษ = New System.Windows.Forms.Button()
         Me.ไข่ดาว = New System.Windows.Forms.Button()
         Me.ไข่เจียว = New System.Windows.Forms.Button()
         Me.กุนเชียง = New System.Windows.Forms.Button()
         Me.Add = New System.Windows.Forms.Button()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
         Me.TextBox4 = New System.Windows.Forms.TextBox()
-        Me.TextBox5 = New System.Windows.Forms.TextBox()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.ลำดับ = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.วันที่ = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -65,6 +60,12 @@ Partial Class Form1
         Me.CheckBox1 = New System.Windows.Forms.CheckBox()
         Me.CheckBox2 = New System.Windows.Forms.CheckBox()
         Me.CheckBox3 = New System.Windows.Forms.CheckBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.orderDetailView = New System.Windows.Forms.TextBox()
+        Me.priceSum = New System.Windows.Forms.TextBox()
+        Me.Label4 = New System.Windows.Forms.Label()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -228,36 +229,6 @@ Partial Class Form1
         Me.ทะเล.Text = "ทะเล"
         Me.ทะเล.UseVisualStyleBackColor = True
         '
-        'ราดข้าว
-        '
-        Me.ราดข้าว.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.ราดข้าว.Location = New System.Drawing.Point(603, 326)
-        Me.ราดข้าว.Name = "ราดข้าว"
-        Me.ราดข้าว.Size = New System.Drawing.Size(184, 46)
-        Me.ราดข้าว.TabIndex = 16
-        Me.ราดข้าว.Text = "ราดข้าว"
-        Me.ราดข้าว.UseVisualStyleBackColor = True
-        '
-        'กับข้าว
-        '
-        Me.กับข้าว.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.กับข้าว.Location = New System.Drawing.Point(492, 378)
-        Me.กับข้าว.Name = "กับข้าว"
-        Me.กับข้าว.Size = New System.Drawing.Size(184, 46)
-        Me.กับข้าว.TabIndex = 17
-        Me.กับข้าว.Text = "กับข้าว"
-        Me.กับข้าว.UseVisualStyleBackColor = True
-        '
-        'พิเศษ
-        '
-        Me.พิเศษ.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.พิเศษ.Location = New System.Drawing.Point(511, 402)
-        Me.พิเศษ.Name = "พิเศษ"
-        Me.พิเศษ.Size = New System.Drawing.Size(184, 46)
-        Me.พิเศษ.TabIndex = 19
-        Me.พิเศษ.Text = "พิเศษ"
-        Me.พิเศษ.UseVisualStyleBackColor = True
-        '
         'ไข่ดาว
         '
         Me.ไข่ดาว.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
@@ -291,7 +262,7 @@ Partial Class Form1
         'Add
         '
         Me.Add.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.Add.Location = New System.Drawing.Point(1009, 302)
+        Me.Add.Location = New System.Drawing.Point(1002, 302)
         Me.Add.Name = "Add"
         Me.Add.Size = New System.Drawing.Size(184, 154)
         Me.Add.TabIndex = 23
@@ -314,14 +285,6 @@ Partial Class Form1
         Me.TextBox2.Size = New System.Drawing.Size(374, 62)
         Me.TextBox2.TabIndex = 25
         '
-        'TextBox3
-        '
-        Me.TextBox3.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.TextBox3.Location = New System.Drawing.Point(603, 221)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(184, 62)
-        Me.TextBox3.TabIndex = 26
-        '
         'TextBox4
         '
         Me.TextBox4.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
@@ -330,19 +293,11 @@ Partial Class Form1
         Me.TextBox4.Size = New System.Drawing.Size(184, 62)
         Me.TextBox4.TabIndex = 27
         '
-        'TextBox5
-        '
-        Me.TextBox5.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.TextBox5.Location = New System.Drawing.Point(302, 358)
-        Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.Size = New System.Drawing.Size(184, 62)
-        Me.TextBox5.TabIndex = 28
-        '
         'DataGridView1
         '
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ลำดับ, Me.วันที่, Me.รายการ, Me.จำนวน, Me.ราคา, Me.บ้านเลขที่, Me.ลบ})
-        Me.DataGridView1.Location = New System.Drawing.Point(12, 505)
+        Me.DataGridView1.Location = New System.Drawing.Point(12, 535)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.RowHeadersVisible = False
         Me.DataGridView1.RowHeadersWidth = 62
@@ -404,9 +359,9 @@ Partial Class Form1
         Me.ComboBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.ComboBox1.FormattingEnabled = True
         Me.ComboBox1.Items.AddRange(New Object() {"1", "2", "3", "4", "5", "6", "7", "8", "9"})
-        Me.ComboBox1.Location = New System.Drawing.Point(769, 306)
+        Me.ComboBox1.Location = New System.Drawing.Point(770, 274)
         Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(225, 54)
+        Me.ComboBox1.Size = New System.Drawing.Size(85, 54)
         Me.ComboBox1.TabIndex = 30
         '
         'address1
@@ -430,9 +385,9 @@ Partial Class Form1
         'price
         '
         Me.price.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.price.Location = New System.Drawing.Point(1009, 221)
+        Me.price.Location = New System.Drawing.Point(769, 334)
         Me.price.Name = "price"
-        Me.price.Size = New System.Drawing.Size(184, 62)
+        Me.price.Size = New System.Drawing.Size(169, 62)
         Me.price.TabIndex = 33
         '
         'CheckBox1
@@ -461,18 +416,82 @@ Partial Class Form1
         '
         Me.CheckBox3.AutoSize = True
         Me.CheckBox3.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.CheckBox3.Location = New System.Drawing.Point(1009, 98)
+        Me.CheckBox3.Location = New System.Drawing.Point(1010, 98)
         Me.CheckBox3.Name = "CheckBox3"
         Me.CheckBox3.Size = New System.Drawing.Size(134, 50)
         Me.CheckBox3.TabIndex = 36
         Me.CheckBox3.Text = "พิเศษ"
         Me.CheckBox3.UseVisualStyleBackColor = True
         '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
+        Me.Label1.Location = New System.Drawing.Point(603, 282)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(125, 46)
+        Me.Label1.TabIndex = 37
+        Me.Label1.Text = "จำนวน"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
+        Me.Label2.Location = New System.Drawing.Point(603, 410)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(160, 46)
+        Me.Label2.TabIndex = 38
+        Me.Label2.Text = "บ้านเลขที่"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
+        Me.Label3.Location = New System.Drawing.Point(603, 344)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(95, 46)
+        Me.Label3.TabIndex = 39
+        Me.Label3.Text = "ราคา"
+        '
+        'orderDetailView
+        '
+        Me.orderDetailView.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
+        Me.orderDetailView.Location = New System.Drawing.Point(12, 462)
+        Me.orderDetailView.Name = "orderDetailView"
+        Me.orderDetailView.ReadOnly = True
+        Me.orderDetailView.Size = New System.Drawing.Size(441, 44)
+        Me.orderDetailView.TabIndex = 40
+        '
+        'priceSum
+        '
+        Me.priceSum.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
+        Me.priceSum.Location = New System.Drawing.Point(1002, 475)
+        Me.priceSum.Name = "priceSum"
+        Me.priceSum.ReadOnly = True
+        Me.priceSum.Size = New System.Drawing.Size(184, 44)
+        Me.priceSum.TabIndex = 41
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
+        Me.Label4.Location = New System.Drawing.Point(834, 475)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(144, 46)
+        Me.Label4.TabIndex = 42
+        Me.Label4.Text = "ยอดรวม"
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1198, 884)
+        Me.Controls.Add(Me.Label4)
+        Me.Controls.Add(Me.priceSum)
+        Me.Controls.Add(Me.orderDetailView)
+        Me.Controls.Add(Me.Label3)
+        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.CheckBox3)
         Me.Controls.Add(Me.CheckBox2)
         Me.Controls.Add(Me.CheckBox1)
@@ -481,18 +500,13 @@ Partial Class Form1
         Me.Controls.Add(Me.address1)
         Me.Controls.Add(Me.ComboBox1)
         Me.Controls.Add(Me.DataGridView1)
-        Me.Controls.Add(Me.TextBox5)
         Me.Controls.Add(Me.TextBox4)
-        Me.Controls.Add(Me.TextBox3)
         Me.Controls.Add(Me.TextBox2)
         Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.Add)
         Me.Controls.Add(Me.กุนเชียง)
         Me.Controls.Add(Me.ไข่เจียว)
         Me.Controls.Add(Me.ไข่ดาว)
-        Me.Controls.Add(Me.พิเศษ)
-        Me.Controls.Add(Me.กับข้าว)
-        Me.Controls.Add(Me.ราดข้าว)
         Me.Controls.Add(Me.ทะเล)
         Me.Controls.Add(Me.หมูกรอบ)
         Me.Controls.Add(Me.ไข่เยี่ยวม้า)
@@ -533,18 +547,13 @@ Partial Class Form1
     Friend WithEvents ไข่เยี่ยวม้า As Windows.Forms.Button
     Friend WithEvents หมูกรอบ As Windows.Forms.Button
     Friend WithEvents ทะเล As Windows.Forms.Button
-    Friend WithEvents ราดข้าว As Windows.Forms.Button
-    Friend WithEvents กับข้าว As Windows.Forms.Button
-    Friend WithEvents พิเศษ As Windows.Forms.Button
     Friend WithEvents ไข่ดาว As Windows.Forms.Button
     Friend WithEvents ไข่เจียว As Windows.Forms.Button
     Friend WithEvents กุนเชียง As Windows.Forms.Button
     Friend WithEvents Add As Windows.Forms.Button
     Friend WithEvents TextBox1 As Windows.Forms.TextBox
     Friend WithEvents TextBox2 As Windows.Forms.TextBox
-    Friend WithEvents TextBox3 As Windows.Forms.TextBox
     Friend WithEvents TextBox4 As Windows.Forms.TextBox
-    Friend WithEvents TextBox5 As Windows.Forms.TextBox
     Friend WithEvents DataGridView1 As Windows.Forms.DataGridView
     Friend WithEvents ลำดับ As Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents วันที่ As Windows.Forms.DataGridViewTextBoxColumn
@@ -560,4 +569,10 @@ Partial Class Form1
     Friend WithEvents CheckBox1 As Windows.Forms.CheckBox
     Friend WithEvents CheckBox2 As Windows.Forms.CheckBox
     Friend WithEvents CheckBox3 As Windows.Forms.CheckBox
+    Friend WithEvents Label1 As Windows.Forms.Label
+    Friend WithEvents Label2 As Windows.Forms.Label
+    Friend WithEvents Label3 As Windows.Forms.Label
+    Friend WithEvents orderDetailView As Windows.Forms.TextBox
+    Friend WithEvents priceSum As Windows.Forms.TextBox
+    Friend WithEvents Label4 As Windows.Forms.Label
 End Class
