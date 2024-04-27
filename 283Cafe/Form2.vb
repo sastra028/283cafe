@@ -25,7 +25,15 @@ Public Class Form2
                 Dim menuType As String = item.orderDetailModel.menuType
                 Dim orderType As String = item.orderDetailModel.orderType
                 Dim special As String = item.orderDetailModel.special
-                Dim typeTemp As String = menuType + " + " + orderType
+                Dim typeTemp As String = menuType
+                If item.orderDetailModel IsNot Nothing And item.orderDetailModel.menuMixType IsNot Nothing Then
+                    If item.orderDetailModel.menuMixType.Length > 0 Then
+                        typeTemp += " ผสม " + item.orderDetailModel.menuMixType
+                    End If
+                End If
+                    If (orderType.Length > 0) Then
+                    typeTemp += " + " + orderType
+                End If
                 If special.Length > 0 Then
                     typeTemp += " + " + special
                 End If
@@ -38,7 +46,7 @@ Public Class Form2
                 Else
                     add(menuTypeHash, "กับข้าว", item.number)
                 End If
-                count = count + item.number
+                count += item.number
             End If
         Next
         add(menuTypeHash, "จำนวนที่ขาย", count)

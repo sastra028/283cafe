@@ -69,7 +69,7 @@ Partial Class Form2
         Me.DataGridView1.RowHeadersVisible = False
         Me.DataGridView1.RowHeadersWidth = 62
         Me.DataGridView1.RowTemplate.Height = 28
-        Me.DataGridView1.Size = New System.Drawing.Size(478, 590)
+        Me.DataGridView1.Size = New System.Drawing.Size(564, 752)
         Me.DataGridView1.TabIndex = 0
         '
         'ลำดับที่
@@ -97,7 +97,7 @@ Partial Class Form2
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(502, 614)
+        Me.ClientSize = New System.Drawing.Size(588, 776)
         Me.Controls.Add(Me.DataGridView1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Form2"
