@@ -38,6 +38,25 @@
         End Set
     End Property
 
+    Private _menuMixType As String
+    Public Property menuMixType() As String
+        Get
+            Return _menuMixType
+        End Get
+        Set(ByVal value As String)
+            _menuMixType = value
+        End Set
+    End Property
+    Private _menuMixTypePrice As Integer
+    Public Property menuMixTypePrice() As Integer
+        Get
+            Return _menuMixTypePrice
+        End Get
+        Set(ByVal value As Integer)
+            _menuMixTypePrice = value
+        End Set
+    End Property
+
     Private _orderType As String
     Public Property orderType() As String
         Get

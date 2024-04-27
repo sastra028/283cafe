@@ -73,6 +73,7 @@ Partial Class Form1
         Me.orderDate = New System.Windows.Forms.TextBox()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Label6 = New System.Windows.Forms.Label()
+        Me.Mix = New System.Windows.Forms.Button()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -201,7 +202,7 @@ Partial Class Form1
         '
         Me.กุ้ง.BackColor = System.Drawing.Color.Pink
         Me.กุ้ง.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.กุ้ง.Location = New System.Drawing.Point(226, 306)
+        Me.กุ้ง.Location = New System.Drawing.Point(416, 254)
         Me.กุ้ง.Name = "กุ้ง"
         Me.กุ้ง.Size = New System.Drawing.Size(184, 46)
         Me.กุ้ง.TabIndex = 11
@@ -212,7 +213,7 @@ Partial Class Form1
         '
         Me.หมึก.BackColor = System.Drawing.Color.Pink
         Me.หมึก.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.หมึก.Location = New System.Drawing.Point(416, 98)
+        Me.หมึก.Location = New System.Drawing.Point(416, 202)
         Me.หมึก.Name = "หมึก"
         Me.หมึก.Size = New System.Drawing.Size(184, 46)
         Me.หมึก.TabIndex = 12
@@ -223,7 +224,7 @@ Partial Class Form1
         '
         Me.ไข่เยี่ยวม้า.BackColor = System.Drawing.Color.Pink
         Me.ไข่เยี่ยวม้า.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.ไข่เยี่ยวม้า.Location = New System.Drawing.Point(416, 150)
+        Me.ไข่เยี่ยวม้า.Location = New System.Drawing.Point(416, 98)
         Me.ไข่เยี่ยวม้า.Name = "ไข่เยี่ยวม้า"
         Me.ไข่เยี่ยวม้า.Size = New System.Drawing.Size(184, 46)
         Me.ไข่เยี่ยวม้า.TabIndex = 13
@@ -234,7 +235,7 @@ Partial Class Form1
         '
         Me.หมูกรอบ.BackColor = System.Drawing.Color.Pink
         Me.หมูกรอบ.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.หมูกรอบ.Location = New System.Drawing.Point(416, 202)
+        Me.หมูกรอบ.Location = New System.Drawing.Point(416, 150)
         Me.หมูกรอบ.Name = "หมูกรอบ"
         Me.หมูกรอบ.Size = New System.Drawing.Size(184, 46)
         Me.หมูกรอบ.TabIndex = 14
@@ -245,7 +246,7 @@ Partial Class Form1
         '
         Me.ทะเล.BackColor = System.Drawing.Color.Pink
         Me.ทะเล.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.ทะเล.Location = New System.Drawing.Point(416, 254)
+        Me.ทะเล.Location = New System.Drawing.Point(416, 306)
         Me.ทะเล.Name = "ทะเล"
         Me.ทะเล.Size = New System.Drawing.Size(184, 46)
         Me.ทะเล.TabIndex = 15
@@ -278,7 +279,7 @@ Partial Class Form1
         '
         Me.กุนเชียง.BackColor = System.Drawing.Color.Pink
         Me.กุนเชียง.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.กุนเชียง.Location = New System.Drawing.Point(416, 306)
+        Me.กุนเชียง.Location = New System.Drawing.Point(226, 306)
         Me.กุนเชียง.Name = "กุนเชียง"
         Me.กุนเชียง.Size = New System.Drawing.Size(184, 46)
         Me.กุนเชียง.TabIndex = 22
@@ -575,12 +576,24 @@ Partial Class Form1
         Me.Label6.TabIndex = 47
         Me.Label6.Text = "วันที่"
         '
+        'Mix
+        '
+        Me.Mix.BackColor = System.Drawing.Color.GreenYellow
+        Me.Mix.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
+        Me.Mix.Location = New System.Drawing.Point(226, 358)
+        Me.Mix.Name = "Mix"
+        Me.Mix.Size = New System.Drawing.Size(374, 46)
+        Me.Mix.TabIndex = 48
+        Me.Mix.Text = "ผสม"
+        Me.Mix.UseVisualStyleBackColor = False
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSize = True
         Me.ClientSize = New System.Drawing.Size(1476, 1121)
+        Me.Controls.Add(Me.Mix)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.orderDate)
@@ -683,4 +696,5 @@ Partial Class Form1
     Friend WithEvents orderDate As Windows.Forms.TextBox
     Friend WithEvents Button1 As Windows.Forms.Button
     Friend WithEvents Label6 As Windows.Forms.Label
+    Friend WithEvents Mix As Windows.Forms.Button
 End Class

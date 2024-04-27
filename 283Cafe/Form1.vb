@@ -11,6 +11,7 @@ Public Class Form1
     Dim _totalPrice As Integer = 0
     Dim _menuPrice As Integer = 0
     Dim _menuTypePrice As Integer = 0
+    Dim _menuMixTypePrice As Integer = 0
     Dim _orderTypePrice As Integer = 0
     Dim _onTopPrice As Integer = 0
     Dim _specialPrice As Integer = 0
@@ -18,6 +19,7 @@ Public Class Form1
 
     Dim textBox3 As String = ""
     Dim textBox5 As String = ""
+    Dim menuTypeMix As String = ""
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles กระเพรา.Click
         TextBox1.Text = "กระเพรา"
         calPrice()
@@ -126,6 +128,7 @@ Public Class Form1
         Dim type = TextBox2.Text
         Dim menuPrice As Integer = 50
         Dim menuTypePrice As Integer = getSubPrice()
+        Dim menuMixTypePrice As Integer = getSubMixPrice()
         Dim orderTypePrice As Integer = getOrderTypePrice()
         Dim onTopPrice As Integer = getOnTopPrice()
         Dim specialPrice As Integer = getSpecialPrice()
@@ -140,6 +143,10 @@ Public Class Form1
         End If
 
         Dim orderName = TextBox1.Text + TextBox2.Text
+
+        If menuTypeMix.Length > 0 Then
+            orderName += "ผสม" + menuTypeMix
+        End If
 
         If TextBox4.TextLength > 0 Then
             orderName += " + " + TextBox4.Text
@@ -170,7 +177,7 @@ Public Class Form1
         Dim totalPrice As Integer = 0
         Dim numberOrder = ComboBox1.Text
         If TextBox1.TextLength > 0 And TextBox2.TextLength > 0 Then
-            totalPrice = menuPrice + menuTypePrice + orderTypePrice + onTopPrice + specialPrice
+            totalPrice = menuPrice + menuTypePrice + menuMixTypePrice + orderTypePrice + onTopPrice + specialPrice
             If numberOrder Then
                 totalPrice = totalPrice * numberOrder
             End If
@@ -179,9 +186,11 @@ Public Class Form1
             _totalPrice = totalPrice
             _menuPrice = menuPrice
             _menuTypePrice = menuTypePrice
+            _menuMixTypePrice = menuMixTypePrice
             _orderTypePrice = orderTypePrice
             _onTopPrice = onTopPrice
             _specialPrice = specialPrice
+
 
         Else
             totalPrice = 0
@@ -213,6 +222,34 @@ Public Class Form1
             subPrice = 20
         ElseIf "กุนเชียง".Equals(type) Then
             subPrice = 10
+        End If
+        Return subPrice
+    End Function
+
+
+    Function getSubMixPrice()
+        Dim type = TextBox2.Text
+        Dim subPrice = 0
+        If "หมูสับ".Equals(type) Then
+            subPrice = 0
+        ElseIf "หมูชิ้น".Equals(type) Then
+            subPrice = 0
+        ElseIf "ไก่".Equals(type) Then
+            subPrice = 0
+        ElseIf "เนื้อสับ".Equals(type) Then
+            subPrice = 0
+        ElseIf "กุ้ง".Equals(type) Then
+            subPrice = 10
+        ElseIf "หมึก".Equals(type) Then
+            subPrice = 10
+        ElseIf "ไข่เยี่ยวม้า".Equals(type) Then
+            subPrice = 10
+        ElseIf "หมูกรอบ".Equals(type) Then
+            subPrice = 10
+        ElseIf "ทะเล".Equals(type) Then
+            subPrice = 10
+        ElseIf "กุนเชียง".Equals(type) Then
+            subPrice = 0
         End If
         Return subPrice
     End Function
@@ -262,6 +299,8 @@ Public Class Form1
         orderDetailModel.menuPrice = _menuPrice
         orderDetailModel.menuType = TextBox2.Text
         orderDetailModel.menuTypePrice = _menuTypePrice
+        orderDetailModel.menuMixType = menuTypeMix
+        orderDetailModel.menuMixTypePrice = _menuMixTypePrice
         orderDetailModel.orderType = textBox3
         orderDetailModel.orderTypePrice = _orderTypePrice
         orderDetailModel.onTop = TextBox4.Text
@@ -308,6 +347,7 @@ Public Class Form1
         _totalPrice = 0
         _menuPrice = 0
         _menuTypePrice = 0
+        _menuMixTypePrice = 0
         _orderTypePrice = 0
         _onTopPrice = 0
         _specialPrice = 0
@@ -324,6 +364,7 @@ Public Class Form1
 
         textBox5 = ""
         textBox3 = ""
+        menuTypeMix = ""
     End Sub
 
     Private Sub CheckBox3_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox3.CheckedChanged
@@ -481,8 +522,22 @@ Public Class Form1
             If orderMain.orderModel IsNot Nothing Then
                 orderModelList = orderMain.orderModel
             End If
+        Else
+            orderModelList = New List(Of OrderModel)
+
         End If
         clear()
         drawTableRow()
+    End Sub
+
+
+    Private Sub orderDate_KeyDown(sender As Object, e As KeyEventArgs) Handles orderDate.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            Button1_Click_1(Nothing, Nothing)
+        End If
+    End Sub
+
+    Private Sub Mix_Click(sender As Object, e As EventArgs) Handles Mix.Click
+        menuTypeMix = TextBox2.Text
     End Sub
 End Class
