@@ -25,6 +25,7 @@ Partial Class Form2
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form2))
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.ลำดับที่ = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.รายการ = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -98,6 +99,7 @@ Partial Class Form2
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(502, 614)
         Me.Controls.Add(Me.DataGridView1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Form2"
         Me.Text = "สรุป"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
