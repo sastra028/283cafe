@@ -74,6 +74,7 @@ Partial Class Form1
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Mix = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -333,7 +334,7 @@ Partial Class Form1
         Me.DataGridView1.RowHeadersVisible = False
         Me.DataGridView1.RowHeadersWidth = 62
         Me.DataGridView1.RowTemplate.Height = 28
-        Me.DataGridView1.Size = New System.Drawing.Size(1452, 630)
+        Me.DataGridView1.Size = New System.Drawing.Size(1421, 630)
         Me.DataGridView1.TabIndex = 29
         '
         'ลำดับ
@@ -587,12 +588,24 @@ Partial Class Form1
         Me.Mix.Text = "ผสม"
         Me.Mix.UseVisualStyleBackColor = False
         '
+        'Button2
+        '
+        Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
+        Me.Button2.Location = New System.Drawing.Point(1331, 409)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(101, 53)
+        Me.Button2.TabIndex = 49
+        Me.Button2.Text = "สรุป"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoScroll = True
         Me.AutoSize = True
-        Me.ClientSize = New System.Drawing.Size(1476, 1121)
+        Me.ClientSize = New System.Drawing.Size(1481, 1121)
+        Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Mix)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.Button1)
@@ -697,4 +710,5 @@ Partial Class Form1
     Friend WithEvents Button1 As Windows.Forms.Button
     Friend WithEvents Label6 As Windows.Forms.Label
     Friend WithEvents Mix As Windows.Forms.Button
+    Friend WithEvents Button2 As Windows.Forms.Button
 End Class

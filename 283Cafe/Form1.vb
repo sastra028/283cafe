@@ -540,4 +540,12 @@ Public Class Form1
     Private Sub Mix_Click(sender As Object, e As EventArgs) Handles Mix.Click
         menuTypeMix = TextBox2.Text
     End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        Dim form2 = New Form2()
+        form2.orderModelList = orderModelList
+        form2.orderDate = _currentDate
+        form2.Show()
+    End Sub
+
 End Class

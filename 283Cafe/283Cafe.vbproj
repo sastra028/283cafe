@@ -71,6 +71,8 @@
   <ItemGroup>
     <Import Include="Microsoft.VisualBasic" />
     <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Windows.Forms" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
