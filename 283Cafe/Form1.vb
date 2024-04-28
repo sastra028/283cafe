@@ -1,5 +1,6 @@
 ﻿Imports System.Collections.Generic
 Imports System.ComponentModel
+Imports System.Data
 Imports System.IO
 Imports System.Windows.Forms
 Imports Newtonsoft.Json
@@ -20,6 +21,7 @@ Public Class Form1
     Dim textBox3 As String = ""
     Dim textBox5 As String = ""
     Dim menuTypeMix As String = ""
+    Dim menuTypeMixPrice As Integer = 0
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles กระเพรา.Click
         TextBox1.Text = "กระเพรา"
         calPrice()
@@ -141,6 +143,9 @@ Public Class Form1
         If (CheckBox2.Checked) Then
             textBox3 = "กับข้าว"
         End If
+        If menuTypeMix.Length = 0 Then
+            menuTypeMixPrice = menuTypePrice
+        End If
 
         Dim orderName = TextBox1.Text + TextBox2.Text
 
@@ -246,7 +251,7 @@ Public Class Form1
 
     Function getSubMixPrice()
         Dim subPrice = 0
-        If menuTypeMix.Length > 0 Then
+        If menuTypeMix.Length > 0 And menuTypeMixPrice = 0 Then
             Dim type = TextBox2.Text
             If "หมูสับ".Equals(type) Then
                 subPrice = 0
@@ -331,6 +336,7 @@ Public Class Form1
         orderModelList.Add(orderModel)
         clear()
         drawTableRow()
+        saveData()
     End Sub
 
     Function getCurrentTime(format As String)
@@ -355,6 +361,7 @@ Public Class Form1
         Next
         priceSum.Text = sum.ToString("#####")
         remaingPaid.Text = paidRemaing.ToString("#####")
+        DataGridView1.FirstDisplayedScrollingRowIndex = DataGridView1.RowCount - 1
     End Sub
     Private Sub addRow(dataGridView As DataGridView, item As OrderModel)
         dataGridView.Rows.Add(
@@ -406,10 +413,8 @@ Public Class Form1
     End Sub
 
     Private Sub Form1_Closing(sender As Object, e As CancelEventArgs) Handles Me.Closing
-        Dim orderMain = New OrderMain
-        orderMain.orderModel = orderModelList
-        Dim jsonOrderModelList = objectToString(orderMain)
-        createBill(jsonOrderModelList, ".")
+        Backup.Checked = True
+        saveData()
     End Sub
     Function objectToString(objInput As Object)
         Return JsonConvert.SerializeObject(objInput, Formatting.Indented)
@@ -420,18 +425,27 @@ Public Class Form1
         Dim fullPathBackup As String = path + "\backup\"
         Dim fileExists As Boolean = File.Exists(fullPath)
         If fileExists Then
-            Dim backupPath As String
-            backupPath = path + "\backup"
-            If Not Directory.Exists(backupPath) Then
-                Directory.CreateDirectory(backupPath)
-            End If
-            Dim moveFile = fullPathBackup + "datasource_" + _currentDate + "_" + getCurrentTime("ddMMyyyy-HHmmsss") + ".txt"
+            If Backup.Checked Then
+                Dim backupPath As String
+                backupPath = path + "\backup"
+                If Not Directory.Exists(backupPath) Then
+                    Directory.CreateDirectory(backupPath)
+                End If
+                Dim moveFile = fullPathBackup + "datasource_" + _currentDate + "_" + getCurrentTime("ddMMyyyy-HHmmsss") + ".txt"
 
-            Try
-                File.Move(fullPath, moveFile)
-            Catch ex As Exception
-                MsgBox("Error")
-            End Try
+                Try
+                    File.Move(fullPath, moveFile)
+                Catch ex As Exception
+                    MsgBox("Error")
+                End Try
+            Else
+                'Try
+                '    File.Delete(fullPath)
+                'Catch ex As Exception
+                '    MsgBox("Error")
+                'End Try
+            End If
+
         End If
         Using sw As New StreamWriter(File.Open(fullPath, FileMode.OpenOrCreate))
             sw.WriteLine(data)
@@ -596,5 +610,31 @@ Public Class Form1
         If Not Char.IsControl(e.KeyChar) AndAlso Not Char.IsDigit(e.KeyChar) Then
             e.Handled = True
         End If
+    End Sub
+
+    Private Sub PaidAll_Click(sender As Object, e As EventArgs) Handles PaidAll.Click
+
+        For Each item As OrderModel In orderModelList
+            item.paid = True
+        Next
+        drawTableRow()
+    End Sub
+
+    Private Sub Save_Click(sender As Object, e As EventArgs)
+        saveData()
+    End Sub
+    Private Sub saveData()
+        Try
+            Dim orderMain = New OrderMain
+            orderMain.orderModel = orderModelList
+            Dim jsonOrderModelList = objectToString(orderMain)
+            createBill(jsonOrderModelList, ".")
+        Catch ex As Exception
+            MsgBox("ไม่สามารถบันทึกข้อมูลได้: " + ex.Message)
+        End Try
+    End Sub
+
+    Private Sub ClearInput_Click(sender As Object, e As EventArgs) Handles ClearInput.Click
+        clear()
     End Sub
 End Class

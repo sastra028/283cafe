@@ -77,11 +77,13 @@ Partial Class Form1
         Me.Mix = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.onTopClear = New System.Windows.Forms.Button()
-        Me.Label7 = New System.Windows.Forms.Label()
         Me.ข้าวเปล่า = New System.Windows.Forms.Button()
         Me.ผัดพริกเกลือ = New System.Windows.Forms.Button()
         Me.menuOther = New System.Windows.Forms.TextBox()
         Me.menuOtherPrice = New System.Windows.Forms.TextBox()
+        Me.PaidAll = New System.Windows.Forms.Button()
+        Me.Backup = New System.Windows.Forms.CheckBox()
+        Me.ClearInput = New System.Windows.Forms.Button()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -311,7 +313,7 @@ Partial Class Form1
         Me.TextBox1.Location = New System.Drawing.Point(25, 12)
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.ReadOnly = True
-        Me.TextBox1.Size = New System.Drawing.Size(184, 62)
+        Me.TextBox1.Size = New System.Drawing.Size(374, 62)
         Me.TextBox1.TabIndex = 24
         '
         'TextBox2
@@ -336,12 +338,12 @@ Partial Class Form1
         '
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ลำดับ, Me.วันที่, Me.รายการ, Me.จำนวน, Me.ราคา, Me.บ้านเลขที่, Me.แก้ไข, Me.จ่าย, Me.ลบ})
-        Me.DataGridView1.Location = New System.Drawing.Point(25, 566)
+        Me.DataGridView1.Location = New System.Drawing.Point(25, 480)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.RowHeadersVisible = False
         Me.DataGridView1.RowHeadersWidth = 62
         Me.DataGridView1.RowTemplate.Height = 28
-        Me.DataGridView1.Size = New System.Drawing.Size(1421, 532)
+        Me.DataGridView1.Size = New System.Drawing.Size(1421, 618)
         Me.DataGridView1.TabIndex = 29
         '
         'ลำดับ
@@ -435,7 +437,7 @@ Partial Class Form1
         Me.address2.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.address2.Location = New System.Drawing.Point(1254, 267)
         Me.address2.Name = "address2"
-        Me.address2.Size = New System.Drawing.Size(116, 53)
+        Me.address2.Size = New System.Drawing.Size(117, 53)
         Me.address2.TabIndex = 32
         '
         'price
@@ -512,10 +514,10 @@ Partial Class Form1
         'orderDetailView
         '
         Me.orderDetailView.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.orderDetailView.Location = New System.Drawing.Point(405, 411)
+        Me.orderDetailView.Location = New System.Drawing.Point(25, 411)
         Me.orderDetailView.Name = "orderDetailView"
         Me.orderDetailView.ReadOnly = True
-        Me.orderDetailView.Size = New System.Drawing.Size(569, 35)
+        Me.orderDetailView.Size = New System.Drawing.Size(949, 35)
         Me.orderDetailView.TabIndex = 40
         '
         'priceSum
@@ -550,18 +552,18 @@ Partial Class Form1
         'remaingPaid
         '
         Me.remaingPaid.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.remaingPaid.Location = New System.Drawing.Point(1130, 339)
+        Me.remaingPaid.Location = New System.Drawing.Point(1145, 339)
         Me.remaingPaid.Name = "remaingPaid"
         Me.remaingPaid.ReadOnly = True
-        Me.remaingPaid.Size = New System.Drawing.Size(138, 44)
+        Me.remaingPaid.Size = New System.Drawing.Size(123, 44)
         Me.remaingPaid.TabIndex = 44
         '
         'orderDate
         '
         Me.orderDate.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.orderDate.Location = New System.Drawing.Point(1130, 409)
+        Me.orderDate.Location = New System.Drawing.Point(1145, 409)
         Me.orderDate.Name = "orderDate"
-        Me.orderDate.Size = New System.Drawing.Size(251, 53)
+        Me.orderDate.Size = New System.Drawing.Size(236, 53)
         Me.orderDate.TabIndex = 45
         '
         'Button1
@@ -616,14 +618,6 @@ Partial Class Form1
         Me.onTopClear.Text = "ไม่ใส่"
         Me.onTopClear.UseVisualStyleBackColor = False
         '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(1645, 442)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(0, 20)
-        Me.Label7.TabIndex = 51
-        '
         'ข้าวเปล่า
         '
         Me.ข้าวเปล่า.BackColor = System.Drawing.Color.PaleVioletRed
@@ -662,6 +656,38 @@ Partial Class Form1
         Me.menuOtherPrice.Size = New System.Drawing.Size(184, 44)
         Me.menuOtherPrice.TabIndex = 55
         '
+        'PaidAll
+        '
+        Me.PaidAll.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
+        Me.PaidAll.Location = New System.Drawing.Point(1452, 480)
+        Me.PaidAll.Name = "PaidAll"
+        Me.PaidAll.Size = New System.Drawing.Size(160, 53)
+        Me.PaidAll.TabIndex = 56
+        Me.PaidAll.Text = "จ่ายทั้งหมด"
+        Me.PaidAll.UseVisualStyleBackColor = True
+        '
+        'Backup
+        '
+        Me.Backup.AutoSize = True
+        Me.Backup.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
+        Me.Backup.Location = New System.Drawing.Point(1504, 1062)
+        Me.Backup.Name = "Backup"
+        Me.Backup.Size = New System.Drawing.Size(141, 36)
+        Me.Backup.TabIndex = 58
+        Me.Backup.Text = "Backup"
+        Me.Backup.UseVisualStyleBackColor = True
+        '
+        'ClearInput
+        '
+        Me.ClearInput.BackColor = System.Drawing.Color.RosyBrown
+        Me.ClearInput.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
+        Me.ClearInput.Location = New System.Drawing.Point(1377, 250)
+        Me.ClearInput.Name = "ClearInput"
+        Me.ClearInput.Size = New System.Drawing.Size(248, 68)
+        Me.ClearInput.TabIndex = 59
+        Me.ClearInput.Text = "ล้าง"
+        Me.ClearInput.UseVisualStyleBackColor = False
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
@@ -669,11 +695,13 @@ Partial Class Form1
         Me.AutoScroll = True
         Me.AutoSize = True
         Me.ClientSize = New System.Drawing.Size(1701, 1121)
+        Me.Controls.Add(Me.ClearInput)
+        Me.Controls.Add(Me.Backup)
+        Me.Controls.Add(Me.PaidAll)
         Me.Controls.Add(Me.menuOtherPrice)
         Me.Controls.Add(Me.menuOther)
         Me.Controls.Add(Me.ผัดพริกเกลือ)
         Me.Controls.Add(Me.ข้าวเปล่า)
-        Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.onTopClear)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Mix)
@@ -783,9 +811,11 @@ Partial Class Form1
     Friend WithEvents Mix As Windows.Forms.Button
     Friend WithEvents Button2 As Windows.Forms.Button
     Friend WithEvents onTopClear As Button
-    Friend WithEvents Label7 As Label
     Friend WithEvents ข้าวเปล่า As Button
     Friend WithEvents ผัดพริกเกลือ As Button
     Friend WithEvents menuOther As TextBox
     Friend WithEvents menuOtherPrice As TextBox
+    Friend WithEvents PaidAll As Button
+    Friend WithEvents Backup As CheckBox
+    Friend WithEvents ClearInput As Button
 End Class
