@@ -228,29 +228,32 @@ Public Class Form1
 
 
     Function getSubMixPrice()
-        Dim type = TextBox2.Text
         Dim subPrice = 0
-        If "หมูสับ".Equals(type) Then
-            subPrice = 0
-        ElseIf "หมูชิ้น".Equals(type) Then
-            subPrice = 0
-        ElseIf "ไก่".Equals(type) Then
-            subPrice = 0
-        ElseIf "เนื้อสับ".Equals(type) Then
-            subPrice = 0
-        ElseIf "กุ้ง".Equals(type) Then
-            subPrice = 10
-        ElseIf "หมึก".Equals(type) Then
-            subPrice = 10
-        ElseIf "ไข่เยี่ยวม้า".Equals(type) Then
-            subPrice = 10
-        ElseIf "หมูกรอบ".Equals(type) Then
-            subPrice = 10
-        ElseIf "ทะเล".Equals(type) Then
-            subPrice = 10
-        ElseIf "กุนเชียง".Equals(type) Then
-            subPrice = 0
+        If menuTypeMix.Length > 0 Then
+            Dim type = TextBox2.Text
+            If "หมูสับ".Equals(type) Then
+                subPrice = 0
+            ElseIf "หมูชิ้น".Equals(type) Then
+                subPrice = 0
+            ElseIf "ไก่".Equals(type) Then
+                subPrice = 0
+            ElseIf "เนื้อสับ".Equals(type) Then
+                subPrice = 0
+            ElseIf "กุ้ง".Equals(type) Then
+                subPrice = 10
+            ElseIf "หมึก".Equals(type) Then
+                subPrice = 10
+            ElseIf "ไข่เยี่ยวม้า".Equals(type) Then
+                subPrice = 10
+            ElseIf "หมูกรอบ".Equals(type) Then
+                subPrice = 10
+            ElseIf "ทะเล".Equals(type) Then
+                subPrice = 10
+            ElseIf "กุนเชียง".Equals(type) Then
+                subPrice = 0
+            End If
         End If
+
         Return subPrice
     End Function
 
@@ -267,7 +270,7 @@ Public Class Form1
         Dim onTopPrice = 0
         If "ไข่ดาว".Equals(type) Then
             onTopPrice = 10
-        ElseIf "ไขเจียว".Equals(type) Then
+        ElseIf "ไข่เจียว".Equals(type) Then
             onTopPrice = 10
         End If
         Return onTopPrice
@@ -548,4 +551,8 @@ Public Class Form1
         form2.Show()
     End Sub
 
+    Private Sub onTopClear_Click(sender As Object, e As EventArgs) Handles onTopClear.Click
+        TextBox4.Text = ""
+        calPrice()
+    End Sub
 End Class

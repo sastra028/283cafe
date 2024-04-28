@@ -76,6 +76,7 @@ Partial Class Form1
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Mix = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
+        Me.onTopClear = New System.Windows.Forms.Button()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -599,13 +600,25 @@ Partial Class Form1
         Me.Button2.Text = "สรุป"
         Me.Button2.UseVisualStyleBackColor = True
         '
+        'onTopClear
+        '
+        Me.onTopClear.BackColor = System.Drawing.Color.Yellow
+        Me.onTopClear.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
+        Me.onTopClear.Location = New System.Drawing.Point(611, 202)
+        Me.onTopClear.Name = "onTopClear"
+        Me.onTopClear.Size = New System.Drawing.Size(184, 46)
+        Me.onTopClear.TabIndex = 50
+        Me.onTopClear.Text = "ไม่ใส่"
+        Me.onTopClear.UseVisualStyleBackColor = False
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
         Me.AutoSize = True
-        Me.ClientSize = New System.Drawing.Size(1481, 1121)
+        Me.ClientSize = New System.Drawing.Size(1488, 1121)
+        Me.Controls.Add(Me.onTopClear)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Mix)
         Me.Controls.Add(Me.Label6)
@@ -713,4 +726,5 @@ Partial Class Form1
     Friend WithEvents Label6 As Windows.Forms.Label
     Friend WithEvents Mix As Windows.Forms.Button
     Friend WithEvents Button2 As Windows.Forms.Button
+    Friend WithEvents onTopClear As Button
 End Class
