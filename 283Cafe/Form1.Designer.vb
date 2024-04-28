@@ -77,6 +77,7 @@ Partial Class Form1
         Me.Mix = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.onTopClear = New System.Windows.Forms.Button()
+        Me.Label7 = New System.Windows.Forms.Label()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -506,11 +507,11 @@ Partial Class Form1
         '
         'orderDetailView
         '
-        Me.orderDetailView.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
+        Me.orderDetailView.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.orderDetailView.Location = New System.Drawing.Point(226, 411)
         Me.orderDetailView.Name = "orderDetailView"
         Me.orderDetailView.ReadOnly = True
-        Me.orderDetailView.Size = New System.Drawing.Size(569, 44)
+        Me.orderDetailView.Size = New System.Drawing.Size(569, 35)
         Me.orderDetailView.TabIndex = 40
         '
         'priceSum
@@ -611,6 +612,14 @@ Partial Class Form1
         Me.onTopClear.Text = "ไม่ใส่"
         Me.onTopClear.UseVisualStyleBackColor = False
         '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(1466, 442)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(0, 20)
+        Me.Label7.TabIndex = 51
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
@@ -618,6 +627,7 @@ Partial Class Form1
         Me.AutoScroll = True
         Me.AutoSize = True
         Me.ClientSize = New System.Drawing.Size(1488, 1121)
+        Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.onTopClear)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Mix)
@@ -727,4 +737,5 @@ Partial Class Form1
     Friend WithEvents Mix As Windows.Forms.Button
     Friend WithEvents Button2 As Windows.Forms.Button
     Friend WithEvents onTopClear As Button
+    Friend WithEvents Label7 As Label
 End Class
