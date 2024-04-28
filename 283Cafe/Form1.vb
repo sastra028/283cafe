@@ -337,6 +337,7 @@ Public Class Form1
         clear()
         drawTableRow()
         saveData()
+        DataGridView1.FirstDisplayedScrollingRowIndex = DataGridView1.RowCount - 1
     End Sub
 
     Function getCurrentTime(format As String)
@@ -351,21 +352,33 @@ Public Class Form1
 
         Dim sum As Integer = 0
         Dim paidRemaing As Integer = 0
+        Dim paidByTransfer As Integer = 0
+        Dim paidByCash As Integer = 0
 
         For Each item As OrderModel In orderModelList
             addRow(DataGridView1, item)
             sum += item.price
-            If item.paid = False Then
+            'If item.paid = False Then
+            '    paidRemaing += item.price
+            'End If
+            If item.paidTransfer Then
+                paidByTransfer += item.price
+            ElseIf item.paidCash Then
+                paidByCash += item.price
+            Else
                 paidRemaing += item.price
             End If
+
         Next
         priceSum.Text = sum.ToString("#####")
         remaingPaid.Text = paidRemaing.ToString("#####")
-        DataGridView1.FirstDisplayedScrollingRowIndex = DataGridView1.RowCount - 1
+
+        SumTransfer.Text = paidByTransfer.ToString("#####")
+        SumCash.Text = paidByCash.ToString("#####")
     End Sub
     Private Sub addRow(dataGridView As DataGridView, item As OrderModel)
         dataGridView.Rows.Add(
-            item.seq, item.datetime, item.orderDesc, item.number, item.price, item.address1 + "-" + item.address2, "แก้ไข", item.paid)
+            item.seq, item.datetime, item.orderDesc, item.number, item.price, item.address1 + "-" + item.address2, "แก้ไข", item.paidTransfer, item.paidCash)
 
     End Sub
 
@@ -493,11 +506,10 @@ Public Class Form1
     Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
         Try
             Dim columnName = DataGridView1.Columns(e.ColumnIndex).Name
+            Dim dr As DataGridViewRow = DataGridView1.Rows(e.RowIndex)
+            Dim _number = dr.Cells(0).Value.ToString()
             If "ลบ".Equals(columnName) Then
                 If MessageBox.Show("ต้องการลบใช่ไหม ?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
-                    Dim dr As DataGridViewRow = DataGridView1.Rows(e.RowIndex)
-                    Dim _number = dr.Cells(0).Value.ToString()
-
                     Dim orderModelRemove = New OrderModel
                     For Each item As OrderModel In orderModelList
                         If _number.Equals(item.seq) Then
@@ -511,9 +523,6 @@ Public Class Form1
                 End If
             End If
             If "จ่าย".Equals(columnName) Then
-
-                Dim dr As DataGridViewRow = DataGridView1.Rows(e.RowIndex)
-                Dim _number = dr.Cells(0).Value.ToString()
                 For Each item As OrderModel In orderModelList
                     If _number.Equals(item.seq) Then
                         item.paid = Not item.paid
@@ -521,8 +530,6 @@ Public Class Form1
                 Next
             End If
             If "แก้ไข".Equals(columnName) Then
-                Dim dr As DataGridViewRow = DataGridView1.Rows(e.RowIndex)
-                Dim _number = dr.Cells(0).Value.ToString()
                 Dim _address = dr.Cells(5).Value.ToString()
                 Dim _address1 = _address.Split("-")(0)
                 Dim _address2 = _address.Split("-")(1)
@@ -534,10 +541,33 @@ Public Class Form1
                 Next
                 MsgBox("แก้ไขสำเร็จ")
             End If
+
+            If "โอน".Equals(columnName) Then
+                For Each item As OrderModel In orderModelList
+                    If _number.Equals(item.seq) Then
+                        item.paid = Not item.paid
+                        item.paidTransfer = Not item.paidTransfer
+                        item.paidCash = Not item.paidTransfer
+                    End If
+                Next
+            End If
+
+            If "สด".Equals(columnName) Then
+                For Each item As OrderModel In orderModelList
+                    If _number.Equals(item.seq) Then
+                        item.paid = Not item.paid
+                        item.paidCash = Not item.paidCash
+                        item.paidTransfer = Not item.paidCash
+                    End If
+                Next
+            End If
+
+            drawTableRow()
+
+            DataGridView1.FirstDisplayedScrollingRowIndex = _number - 1
         Catch ex As Exception
 
         End Try
-        drawTableRow()
     End Sub
 
     Private Sub reSeq()

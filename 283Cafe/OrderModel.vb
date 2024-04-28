@@ -89,4 +89,23 @@
             _paid = value
         End Set
     End Property
+
+    Private _paidTransfer As Boolean
+    Public Property paidTransfer() As Boolean
+        Get
+            Return _paidTransfer
+        End Get
+        Set(ByVal value As Boolean)
+            _paidTransfer = value
+        End Set
+    End Property
+    Private _paidCash As Boolean
+    Public Property paidCash() As Boolean
+        Get
+            Return _paidCash
+        End Get
+        Set(ByVal value As Boolean)
+            _paidCash = value
+        End Set
+    End Property
 End Class
