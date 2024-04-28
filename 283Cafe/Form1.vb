@@ -173,10 +173,16 @@ Public Class Form1
             menuPrice = 50
         ElseIf "ข้าวไข่เจียว".Equals(menu) Then
             menuPrice = 50
+        ElseIf "ผัดพริกเกลือ".Equals(menu) Then
+            menuPrice = 50
+        ElseIf "ข้าวเปล่า".Equals(menu) Then
+            menuPrice = 10
+        Else
+            menuPrice = getMenuOtherPrice()
         End If
         Dim totalPrice As Integer = 0
         Dim numberOrder = ComboBox1.Text
-        If TextBox1.TextLength > 0 And TextBox2.TextLength > 0 Then
+        If TextBox1.TextLength > 0 Then
             totalPrice = menuPrice + menuTypePrice + menuMixTypePrice + orderTypePrice + onTopPrice + specialPrice
             If numberOrder Then
                 totalPrice = totalPrice * numberOrder
@@ -198,6 +204,17 @@ Public Class Form1
 
         End If
     End Sub
+
+    Function getMenuOtherPrice()
+        Dim result = 0
+        Try
+            result = menuOtherPrice.Text
+        Catch ex As Exception
+
+        End Try
+        Return result
+    End Function
+
 
     Function getSubPrice()
         Dim type = TextBox2.Text
@@ -260,7 +277,7 @@ Public Class Form1
     Function getOrderTypePrice()
         Dim orderTypePrice = 0
         If CheckBox2.Checked Then
-            orderTypePrice = 20
+            orderTypePrice = 30
         End If
         Return orderTypePrice
     End Function
@@ -554,5 +571,30 @@ Public Class Form1
     Private Sub onTopClear_Click(sender As Object, e As EventArgs) Handles onTopClear.Click
         TextBox4.Text = ""
         calPrice()
+    End Sub
+
+    Private Sub ผัดพริกเกลือ_Click(sender As Object, e As EventArgs) Handles ผัดพริกเกลือ.Click
+        TextBox1.Text = "ผัดพริกเกลือ"
+        calPrice()
+    End Sub
+
+    Private Sub ข้าวเปล่า_Click(sender As Object, e As EventArgs) Handles ข้าวเปล่า.Click
+        TextBox1.Text = "ข้าวเปล่า"
+        calPrice()
+    End Sub
+
+    Private Sub menuOther_TextChanged(sender As Object, e As EventArgs) Handles menuOther.TextChanged
+        TextBox1.Text = menuOther.Text
+        calPrice()
+    End Sub
+
+    Private Sub menuOtherPrice_TextChanged(sender As Object, e As EventArgs) Handles menuOtherPrice.TextChanged
+        calPrice()
+    End Sub
+
+    Private Sub menuOtherPrice_KeyPress(sender As Object, e As KeyPressEventArgs) Handles menuOtherPrice.KeyPress
+        If Not Char.IsControl(e.KeyChar) AndAlso Not Char.IsDigit(e.KeyChar) Then
+            e.Handled = True
+        End If
     End Sub
 End Class

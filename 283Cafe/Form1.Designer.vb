@@ -78,6 +78,10 @@ Partial Class Form1
         Me.Button2 = New System.Windows.Forms.Button()
         Me.onTopClear = New System.Windows.Forms.Button()
         Me.Label7 = New System.Windows.Forms.Label()
+        Me.ข้าวเปล่า = New System.Windows.Forms.Button()
+        Me.ผัดพริกเกลือ = New System.Windows.Forms.Button()
+        Me.menuOther = New System.Windows.Forms.TextBox()
+        Me.menuOtherPrice = New System.Windows.Forms.TextBox()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -107,7 +111,7 @@ Partial Class Form1
         '
         Me.ผัดพริกแกง.BackColor = System.Drawing.Color.PaleVioletRed
         Me.ผัดพริกแกง.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.ผัดพริกแกง.Location = New System.Drawing.Point(25, 202)
+        Me.ผัดพริกแกง.Location = New System.Drawing.Point(215, 98)
         Me.ผัดพริกแกง.Name = "ผัดพริกแกง"
         Me.ผัดพริกแกง.Size = New System.Drawing.Size(184, 46)
         Me.ผัดพริกแกง.TabIndex = 2
@@ -118,7 +122,7 @@ Partial Class Form1
         '
         Me.ข้าวกระเทียม.BackColor = System.Drawing.Color.PaleVioletRed
         Me.ข้าวกระเทียม.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.ข้าวกระเทียม.Location = New System.Drawing.Point(25, 254)
+        Me.ข้าวกระเทียม.Location = New System.Drawing.Point(25, 198)
         Me.ข้าวกระเทียม.Name = "ข้าวกระเทียม"
         Me.ข้าวกระเทียม.Size = New System.Drawing.Size(184, 46)
         Me.ข้าวกระเทียม.TabIndex = 3
@@ -129,7 +133,7 @@ Partial Class Form1
         '
         Me.ข้าวผัด.BackColor = System.Drawing.Color.PaleVioletRed
         Me.ข้าวผัด.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.ข้าวผัด.Location = New System.Drawing.Point(25, 306)
+        Me.ข้าวผัด.Location = New System.Drawing.Point(215, 202)
         Me.ข้าวผัด.Name = "ข้าวผัด"
         Me.ข้าวผัด.Size = New System.Drawing.Size(184, 46)
         Me.ข้าวผัด.TabIndex = 4
@@ -140,7 +144,7 @@ Partial Class Form1
         '
         Me.ข้าวไข่ข้น.BackColor = System.Drawing.Color.PaleVioletRed
         Me.ข้าวไข่ข้น.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.ข้าวไข่ข้น.Location = New System.Drawing.Point(25, 358)
+        Me.ข้าวไข่ข้น.Location = New System.Drawing.Point(25, 250)
         Me.ข้าวไข่ข้น.Name = "ข้าวไข่ข้น"
         Me.ข้าวไข่ข้น.Size = New System.Drawing.Size(184, 46)
         Me.ข้าวไข่ข้น.TabIndex = 5
@@ -151,7 +155,7 @@ Partial Class Form1
         '
         Me.ข้าวไข่เจียว.BackColor = System.Drawing.Color.PaleVioletRed
         Me.ข้าวไข่เจียว.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.ข้าวไข่เจียว.Location = New System.Drawing.Point(25, 410)
+        Me.ข้าวไข่เจียว.Location = New System.Drawing.Point(25, 302)
         Me.ข้าวไข่เจียว.Name = "ข้าวไข่เจียว"
         Me.ข้าวไข่เจียว.Size = New System.Drawing.Size(184, 46)
         Me.ข้าวไข่เจียว.TabIndex = 6
@@ -162,7 +166,7 @@ Partial Class Form1
         '
         Me.หมูสับ.BackColor = System.Drawing.Color.Pink
         Me.หมูสับ.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.หมูสับ.Location = New System.Drawing.Point(226, 98)
+        Me.หมูสับ.Location = New System.Drawing.Point(405, 98)
         Me.หมูสับ.Name = "หมูสับ"
         Me.หมูสับ.Size = New System.Drawing.Size(184, 46)
         Me.หมูสับ.TabIndex = 7
@@ -173,7 +177,7 @@ Partial Class Form1
         '
         Me.หมูชิ้น.BackColor = System.Drawing.Color.Pink
         Me.หมูชิ้น.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.หมูชิ้น.Location = New System.Drawing.Point(226, 150)
+        Me.หมูชิ้น.Location = New System.Drawing.Point(405, 150)
         Me.หมูชิ้น.Name = "หมูชิ้น"
         Me.หมูชิ้น.Size = New System.Drawing.Size(184, 46)
         Me.หมูชิ้น.TabIndex = 8
@@ -184,7 +188,7 @@ Partial Class Form1
         '
         Me.ไก่.BackColor = System.Drawing.Color.Pink
         Me.ไก่.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.ไก่.Location = New System.Drawing.Point(226, 202)
+        Me.ไก่.Location = New System.Drawing.Point(405, 202)
         Me.ไก่.Name = "ไก่"
         Me.ไก่.Size = New System.Drawing.Size(184, 46)
         Me.ไก่.TabIndex = 9
@@ -195,7 +199,7 @@ Partial Class Form1
         '
         Me.เนื้อสับ.BackColor = System.Drawing.Color.Pink
         Me.เนื้อสับ.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.เนื้อสับ.Location = New System.Drawing.Point(226, 254)
+        Me.เนื้อสับ.Location = New System.Drawing.Point(405, 254)
         Me.เนื้อสับ.Name = "เนื้อสับ"
         Me.เนื้อสับ.Size = New System.Drawing.Size(184, 46)
         Me.เนื้อสับ.TabIndex = 10
@@ -206,7 +210,7 @@ Partial Class Form1
         '
         Me.กุ้ง.BackColor = System.Drawing.Color.Pink
         Me.กุ้ง.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.กุ้ง.Location = New System.Drawing.Point(416, 254)
+        Me.กุ้ง.Location = New System.Drawing.Point(595, 254)
         Me.กุ้ง.Name = "กุ้ง"
         Me.กุ้ง.Size = New System.Drawing.Size(184, 46)
         Me.กุ้ง.TabIndex = 11
@@ -217,7 +221,7 @@ Partial Class Form1
         '
         Me.หมึก.BackColor = System.Drawing.Color.Pink
         Me.หมึก.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.หมึก.Location = New System.Drawing.Point(416, 202)
+        Me.หมึก.Location = New System.Drawing.Point(595, 202)
         Me.หมึก.Name = "หมึก"
         Me.หมึก.Size = New System.Drawing.Size(184, 46)
         Me.หมึก.TabIndex = 12
@@ -228,7 +232,7 @@ Partial Class Form1
         '
         Me.ไข่เยี่ยวม้า.BackColor = System.Drawing.Color.Pink
         Me.ไข่เยี่ยวม้า.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.ไข่เยี่ยวม้า.Location = New System.Drawing.Point(416, 98)
+        Me.ไข่เยี่ยวม้า.Location = New System.Drawing.Point(595, 98)
         Me.ไข่เยี่ยวม้า.Name = "ไข่เยี่ยวม้า"
         Me.ไข่เยี่ยวม้า.Size = New System.Drawing.Size(184, 46)
         Me.ไข่เยี่ยวม้า.TabIndex = 13
@@ -239,7 +243,7 @@ Partial Class Form1
         '
         Me.หมูกรอบ.BackColor = System.Drawing.Color.Pink
         Me.หมูกรอบ.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.หมูกรอบ.Location = New System.Drawing.Point(416, 150)
+        Me.หมูกรอบ.Location = New System.Drawing.Point(595, 150)
         Me.หมูกรอบ.Name = "หมูกรอบ"
         Me.หมูกรอบ.Size = New System.Drawing.Size(184, 46)
         Me.หมูกรอบ.TabIndex = 14
@@ -250,7 +254,7 @@ Partial Class Form1
         '
         Me.ทะเล.BackColor = System.Drawing.Color.Pink
         Me.ทะเล.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.ทะเล.Location = New System.Drawing.Point(416, 306)
+        Me.ทะเล.Location = New System.Drawing.Point(595, 306)
         Me.ทะเล.Name = "ทะเล"
         Me.ทะเล.Size = New System.Drawing.Size(184, 46)
         Me.ทะเล.TabIndex = 15
@@ -261,7 +265,7 @@ Partial Class Form1
         '
         Me.ไข่ดาว.BackColor = System.Drawing.Color.Yellow
         Me.ไข่ดาว.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.ไข่ดาว.Location = New System.Drawing.Point(610, 98)
+        Me.ไข่ดาว.Location = New System.Drawing.Point(789, 98)
         Me.ไข่ดาว.Name = "ไข่ดาว"
         Me.ไข่ดาว.Size = New System.Drawing.Size(184, 46)
         Me.ไข่ดาว.TabIndex = 20
@@ -272,7 +276,7 @@ Partial Class Form1
         '
         Me.ไข่เจียว.BackColor = System.Drawing.Color.Yellow
         Me.ไข่เจียว.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.ไข่เจียว.Location = New System.Drawing.Point(610, 150)
+        Me.ไข่เจียว.Location = New System.Drawing.Point(789, 150)
         Me.ไข่เจียว.Name = "ไข่เจียว"
         Me.ไข่เจียว.Size = New System.Drawing.Size(184, 46)
         Me.ไข่เจียว.TabIndex = 21
@@ -283,7 +287,7 @@ Partial Class Form1
         '
         Me.กุนเชียง.BackColor = System.Drawing.Color.Pink
         Me.กุนเชียง.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.กุนเชียง.Location = New System.Drawing.Point(226, 306)
+        Me.กุนเชียง.Location = New System.Drawing.Point(405, 306)
         Me.กุนเชียง.Name = "กุนเชียง"
         Me.กุนเชียง.Size = New System.Drawing.Size(184, 46)
         Me.กุนเชียง.TabIndex = 22
@@ -294,7 +298,7 @@ Partial Class Form1
         '
         Me.Add.BackColor = System.Drawing.Color.DodgerBlue
         Me.Add.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.Add.Location = New System.Drawing.Point(1198, 12)
+        Me.Add.Location = New System.Drawing.Point(1377, 12)
         Me.Add.Name = "Add"
         Me.Add.Size = New System.Drawing.Size(248, 218)
         Me.Add.TabIndex = 23
@@ -313,7 +317,7 @@ Partial Class Form1
         'TextBox2
         '
         Me.TextBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.TextBox2.Location = New System.Drawing.Point(226, 12)
+        Me.TextBox2.Location = New System.Drawing.Point(405, 12)
         Me.TextBox2.Name = "TextBox2"
         Me.TextBox2.ReadOnly = True
         Me.TextBox2.Size = New System.Drawing.Size(374, 62)
@@ -322,7 +326,7 @@ Partial Class Form1
         'TextBox4
         '
         Me.TextBox4.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.TextBox4.Location = New System.Drawing.Point(610, 12)
+        Me.TextBox4.Location = New System.Drawing.Point(789, 12)
         Me.TextBox4.Name = "TextBox4"
         Me.TextBox4.ReadOnly = True
         Me.TextBox4.Size = New System.Drawing.Size(184, 62)
@@ -332,12 +336,12 @@ Partial Class Form1
         '
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ลำดับ, Me.วันที่, Me.รายการ, Me.จำนวน, Me.ราคา, Me.บ้านเลขที่, Me.แก้ไข, Me.จ่าย, Me.ลบ})
-        Me.DataGridView1.Location = New System.Drawing.Point(25, 468)
+        Me.DataGridView1.Location = New System.Drawing.Point(25, 566)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.RowHeadersVisible = False
         Me.DataGridView1.RowHeadersWidth = 62
         Me.DataGridView1.RowTemplate.Height = 28
-        Me.DataGridView1.Size = New System.Drawing.Size(1421, 630)
+        Me.DataGridView1.Size = New System.Drawing.Size(1421, 532)
         Me.DataGridView1.TabIndex = 29
         '
         'ลำดับ
@@ -411,7 +415,7 @@ Partial Class Form1
         Me.ComboBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.ComboBox1.FormattingEnabled = True
         Me.ComboBox1.Items.AddRange(New Object() {"1", "2", "3", "4", "5", "6", "7", "8", "9"})
-        Me.ComboBox1.Location = New System.Drawing.Point(967, 138)
+        Me.ComboBox1.Location = New System.Drawing.Point(1146, 138)
         Me.ComboBox1.Name = "ComboBox1"
         Me.ComboBox1.Size = New System.Drawing.Size(168, 54)
         Me.ComboBox1.TabIndex = 30
@@ -421,7 +425,7 @@ Partial Class Form1
         Me.address1.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.address1.FormattingEnabled = True
         Me.address1.Items.AddRange(New Object() {"11", "18", "55", "-"})
-        Me.address1.Location = New System.Drawing.Point(966, 266)
+        Me.address1.Location = New System.Drawing.Point(1145, 266)
         Me.address1.Name = "address1"
         Me.address1.Size = New System.Drawing.Size(86, 54)
         Me.address1.TabIndex = 31
@@ -429,7 +433,7 @@ Partial Class Form1
         'address2
         '
         Me.address2.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.address2.Location = New System.Drawing.Point(1075, 267)
+        Me.address2.Location = New System.Drawing.Point(1254, 267)
         Me.address2.Name = "address2"
         Me.address2.Size = New System.Drawing.Size(116, 53)
         Me.address2.TabIndex = 32
@@ -437,7 +441,7 @@ Partial Class Form1
         'price
         '
         Me.price.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.price.Location = New System.Drawing.Point(966, 198)
+        Me.price.Location = New System.Drawing.Point(1145, 198)
         Me.price.Name = "price"
         Me.price.Size = New System.Drawing.Size(169, 62)
         Me.price.TabIndex = 33
@@ -446,7 +450,7 @@ Partial Class Form1
         '
         Me.CheckBox1.AutoSize = True
         Me.CheckBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.CheckBox1.Location = New System.Drawing.Point(808, 12)
+        Me.CheckBox1.Location = New System.Drawing.Point(987, 12)
         Me.CheckBox1.Name = "CheckBox1"
         Me.CheckBox1.Size = New System.Drawing.Size(168, 50)
         Me.CheckBox1.TabIndex = 34
@@ -457,7 +461,7 @@ Partial Class Form1
         '
         Me.CheckBox2.AutoSize = True
         Me.CheckBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.CheckBox2.Location = New System.Drawing.Point(808, 64)
+        Me.CheckBox2.Location = New System.Drawing.Point(987, 64)
         Me.CheckBox2.Name = "CheckBox2"
         Me.CheckBox2.Size = New System.Drawing.Size(154, 50)
         Me.CheckBox2.TabIndex = 35
@@ -468,7 +472,7 @@ Partial Class Form1
         '
         Me.CheckBox3.AutoSize = True
         Me.CheckBox3.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.CheckBox3.Location = New System.Drawing.Point(1008, 12)
+        Me.CheckBox3.Location = New System.Drawing.Point(1187, 12)
         Me.CheckBox3.Name = "CheckBox3"
         Me.CheckBox3.Size = New System.Drawing.Size(134, 50)
         Me.CheckBox3.TabIndex = 36
@@ -479,7 +483,7 @@ Partial Class Form1
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.Label1.Location = New System.Drawing.Point(800, 146)
+        Me.Label1.Location = New System.Drawing.Point(979, 146)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(125, 46)
         Me.Label1.TabIndex = 37
@@ -489,7 +493,7 @@ Partial Class Form1
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.Label2.Location = New System.Drawing.Point(800, 274)
+        Me.Label2.Location = New System.Drawing.Point(979, 274)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(160, 46)
         Me.Label2.TabIndex = 38
@@ -499,7 +503,7 @@ Partial Class Form1
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.Label3.Location = New System.Drawing.Point(800, 208)
+        Me.Label3.Location = New System.Drawing.Point(979, 208)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(95, 46)
         Me.Label3.TabIndex = 39
@@ -508,7 +512,7 @@ Partial Class Form1
         'orderDetailView
         '
         Me.orderDetailView.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.orderDetailView.Location = New System.Drawing.Point(226, 411)
+        Me.orderDetailView.Location = New System.Drawing.Point(405, 411)
         Me.orderDetailView.Name = "orderDetailView"
         Me.orderDetailView.ReadOnly = True
         Me.orderDetailView.Size = New System.Drawing.Size(569, 35)
@@ -517,7 +521,7 @@ Partial Class Form1
         'priceSum
         '
         Me.priceSum.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.priceSum.Location = New System.Drawing.Point(1245, 339)
+        Me.priceSum.Location = New System.Drawing.Point(1424, 339)
         Me.priceSum.Name = "priceSum"
         Me.priceSum.ReadOnly = True
         Me.priceSum.Size = New System.Drawing.Size(187, 44)
@@ -527,7 +531,7 @@ Partial Class Form1
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.Label4.Location = New System.Drawing.Point(1095, 339)
+        Me.Label4.Location = New System.Drawing.Point(1274, 339)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(144, 46)
         Me.Label4.TabIndex = 42
@@ -537,7 +541,7 @@ Partial Class Form1
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.Label5.Location = New System.Drawing.Point(800, 339)
+        Me.Label5.Location = New System.Drawing.Point(979, 339)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(132, 46)
         Me.Label5.TabIndex = 43
@@ -546,7 +550,7 @@ Partial Class Form1
         'remaingPaid
         '
         Me.remaingPaid.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.remaingPaid.Location = New System.Drawing.Point(951, 339)
+        Me.remaingPaid.Location = New System.Drawing.Point(1130, 339)
         Me.remaingPaid.Name = "remaingPaid"
         Me.remaingPaid.ReadOnly = True
         Me.remaingPaid.Size = New System.Drawing.Size(138, 44)
@@ -555,7 +559,7 @@ Partial Class Form1
         'orderDate
         '
         Me.orderDate.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.orderDate.Location = New System.Drawing.Point(951, 409)
+        Me.orderDate.Location = New System.Drawing.Point(1130, 409)
         Me.orderDate.Name = "orderDate"
         Me.orderDate.Size = New System.Drawing.Size(251, 53)
         Me.orderDate.TabIndex = 45
@@ -563,7 +567,7 @@ Partial Class Form1
         'Button1
         '
         Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.Button1.Location = New System.Drawing.Point(1208, 409)
+        Me.Button1.Location = New System.Drawing.Point(1387, 409)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(101, 53)
         Me.Button1.TabIndex = 46
@@ -574,7 +578,7 @@ Partial Class Form1
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.Label6.Location = New System.Drawing.Point(801, 412)
+        Me.Label6.Location = New System.Drawing.Point(980, 412)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(87, 46)
         Me.Label6.TabIndex = 47
@@ -584,7 +588,7 @@ Partial Class Form1
         '
         Me.Mix.BackColor = System.Drawing.Color.GreenYellow
         Me.Mix.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.Mix.Location = New System.Drawing.Point(226, 358)
+        Me.Mix.Location = New System.Drawing.Point(405, 358)
         Me.Mix.Name = "Mix"
         Me.Mix.Size = New System.Drawing.Size(374, 46)
         Me.Mix.TabIndex = 48
@@ -594,7 +598,7 @@ Partial Class Form1
         'Button2
         '
         Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.Button2.Location = New System.Drawing.Point(1331, 409)
+        Me.Button2.Location = New System.Drawing.Point(1510, 409)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(101, 53)
         Me.Button2.TabIndex = 49
@@ -605,7 +609,7 @@ Partial Class Form1
         '
         Me.onTopClear.BackColor = System.Drawing.Color.Yellow
         Me.onTopClear.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.onTopClear.Location = New System.Drawing.Point(611, 202)
+        Me.onTopClear.Location = New System.Drawing.Point(790, 202)
         Me.onTopClear.Name = "onTopClear"
         Me.onTopClear.Size = New System.Drawing.Size(184, 46)
         Me.onTopClear.TabIndex = 50
@@ -615,10 +619,48 @@ Partial Class Form1
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(1466, 442)
+        Me.Label7.Location = New System.Drawing.Point(1645, 442)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(0, 20)
         Me.Label7.TabIndex = 51
+        '
+        'ข้าวเปล่า
+        '
+        Me.ข้าวเปล่า.BackColor = System.Drawing.Color.PaleVioletRed
+        Me.ข้าวเปล่า.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
+        Me.ข้าวเปล่า.Location = New System.Drawing.Point(215, 254)
+        Me.ข้าวเปล่า.Name = "ข้าวเปล่า"
+        Me.ข้าวเปล่า.Size = New System.Drawing.Size(184, 46)
+        Me.ข้าวเปล่า.TabIndex = 52
+        Me.ข้าวเปล่า.Text = "ข้าวเปล่า"
+        Me.ข้าวเปล่า.UseVisualStyleBackColor = False
+        '
+        'ผัดพริกเกลือ
+        '
+        Me.ผัดพริกเกลือ.BackColor = System.Drawing.Color.PaleVioletRed
+        Me.ผัดพริกเกลือ.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
+        Me.ผัดพริกเกลือ.Location = New System.Drawing.Point(215, 150)
+        Me.ผัดพริกเกลือ.Name = "ผัดพริกเกลือ"
+        Me.ผัดพริกเกลือ.Size = New System.Drawing.Size(184, 46)
+        Me.ผัดพริกเกลือ.TabIndex = 53
+        Me.ผัดพริกเกลือ.Text = "ผัดพริกเกลือ"
+        Me.ผัดพริกเกลือ.UseVisualStyleBackColor = False
+        '
+        'menuOther
+        '
+        Me.menuOther.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
+        Me.menuOther.Location = New System.Drawing.Point(25, 354)
+        Me.menuOther.Name = "menuOther"
+        Me.menuOther.Size = New System.Drawing.Size(184, 44)
+        Me.menuOther.TabIndex = 54
+        '
+        'menuOtherPrice
+        '
+        Me.menuOtherPrice.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
+        Me.menuOtherPrice.Location = New System.Drawing.Point(215, 354)
+        Me.menuOtherPrice.Name = "menuOtherPrice"
+        Me.menuOtherPrice.Size = New System.Drawing.Size(184, 44)
+        Me.menuOtherPrice.TabIndex = 55
         '
         'Form1
         '
@@ -626,7 +668,11 @@ Partial Class Form1
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
         Me.AutoSize = True
-        Me.ClientSize = New System.Drawing.Size(1488, 1121)
+        Me.ClientSize = New System.Drawing.Size(1701, 1121)
+        Me.Controls.Add(Me.menuOtherPrice)
+        Me.Controls.Add(Me.menuOther)
+        Me.Controls.Add(Me.ผัดพริกเกลือ)
+        Me.Controls.Add(Me.ข้าวเปล่า)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.onTopClear)
         Me.Controls.Add(Me.Button2)
@@ -738,4 +784,8 @@ Partial Class Form1
     Friend WithEvents Button2 As Windows.Forms.Button
     Friend WithEvents onTopClear As Button
     Friend WithEvents Label7 As Label
+    Friend WithEvents ข้าวเปล่า As Button
+    Friend WithEvents ผัดพริกเกลือ As Button
+    Friend WithEvents menuOther As TextBox
+    Friend WithEvents menuOtherPrice As TextBox
 End Class
