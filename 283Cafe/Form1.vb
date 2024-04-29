@@ -667,4 +667,13 @@ Public Class Form1
     Private Sub ClearInput_Click(sender As Object, e As EventArgs) Handles ClearInput.Click
         clear()
     End Sub
+
+    Private Sub Setting_Click(sender As Object, e As EventArgs) Handles Setting.Click
+        Dim configForm = New Config
+        configForm.Show()
+    End Sub
+
+    Private Sub price_TextChanged(sender As Object, e As EventArgs) Handles price.TextChanged
+
+    End Sub
 End Class
