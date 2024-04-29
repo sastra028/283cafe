@@ -481,7 +481,7 @@ Public Class Form1
         clear()
         drawTableRow()
         Dim prefixName = "283 Cafe'"
-        Dim version = "(1.0.3)"
+        Dim version = "(1.0.4)"
         Dim headerName = prefixName + " " + version
         Me.Text = headerName
     End Sub
