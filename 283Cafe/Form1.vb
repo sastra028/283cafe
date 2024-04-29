@@ -476,6 +476,10 @@ Public Class Form1
         End If
         clear()
         drawTableRow()
+        Dim prefixName = "283 Cafe'"
+        Dim version = "(1.0.3)"
+        Dim headerName = prefixName + " " + version
+        Me.Text = headerName
     End Sub
 
     Function getOrderCurrent(rootPath As String, currentDate As String)
