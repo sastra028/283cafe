@@ -168,7 +168,7 @@ Public Class Form1
             menuPrice = 50
         ElseIf "คะน้า".Equals(menu) Then
             menuPrice = 50
-        ElseIf "กระเทียม".Equals(menu) Then
+        ElseIf "ข้าวกระเทียม".Equals(menu) Then
             menuPrice = 50
         ElseIf "ผัดพริกแกง".Equals(menu) Then
             menuPrice = 50
