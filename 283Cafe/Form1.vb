@@ -180,6 +180,10 @@ Public Class Form1
             menuPrice = 50
         ElseIf "ผัดพริกเกลือ".Equals(menu) Then
             menuPrice = 50
+        ElseIf "ผัดซีอิ๊ว".Equals(menu) Then
+            menuPrice = 50
+        ElseIf "ผัดพริกหยวก".Equals(menu) Then
+            menuPrice = 50
         ElseIf "ข้าวเปล่า".Equals(menu) Then
             menuPrice = 10
         Else
@@ -670,5 +674,13 @@ Public Class Form1
 
     Private Sub ClearInput_Click(sender As Object, e As EventArgs) Handles ClearInput.Click
         clear()
+    End Sub
+
+    Private Sub ผัดซีอิ๊ว_Click(sender As Object, e As EventArgs) Handles ผัดซีอิ๊ว.Click
+        TextBox1.Text = "ผัดซีอิ๊ว"
+    End Sub
+
+    Private Sub ผัดพริกหยวก_Click(sender As Object, e As EventArgs) Handles ผัดพริกหยวก.Click
+        TextBox1.Text = "ผัดพริกหยวก"
     End Sub
 End Class
