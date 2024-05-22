@@ -286,7 +286,28 @@ Public Class Form1
     Function getOrderTypePrice()
         Dim orderTypePrice = 0
         If CheckBox2.Checked Then
-            orderTypePrice = 30
+            Dim type = TextBox2.Text
+            If "หมูสับ".Equals(type) Then
+                orderTypePrice = 20
+            ElseIf "หมูชิ้น".Equals(type) Then
+                orderTypePrice = 20
+            ElseIf "ไก่".Equals(type) Then
+                orderTypePrice = 20
+            ElseIf "เนื้อสับ".Equals(type) Then
+                orderTypePrice = 20
+            ElseIf "กุ้ง".Equals(type) Then
+                orderTypePrice = 30
+            ElseIf "หมึก".Equals(type) Then
+                orderTypePrice = 30
+            ElseIf "ไข่เยี่ยวม้า".Equals(type) Then
+                orderTypePrice = 30
+            ElseIf "หมูกรอบ".Equals(type) Then
+                orderTypePrice = 30
+            ElseIf "ทะเล".Equals(type) Then
+                orderTypePrice = 30
+            ElseIf "กุนเชียง".Equals(type) Then
+                orderTypePrice = 20
+            End If
         End If
         Return orderTypePrice
     End Function
@@ -481,7 +502,7 @@ Public Class Form1
         clear()
         drawTableRow()
         Dim prefixName = "283 Cafe'"
-        Dim version = "(1.0.4)"
+        Dim version = "(1.0.5)"
         Dim headerName = prefixName + " " + version
         Me.Text = headerName
     End Sub
